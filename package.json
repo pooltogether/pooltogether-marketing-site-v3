@@ -5,12 +5,9 @@
   "author": "PoolTogether Inc.",
   "repository": "git@github.com:pooltogether/pool-marketing-site-v3.git",
   "scripts": {
-    "dev": "NODE_ENV=dev npm-run-all --parallel start:app start:server",
-    "start:app": "PORT=3000 node --max-old-space-size=8192 server.js",
-    "start:server": "netlify-lambda serve functions",
-    "postinstall": "netlify-lambda install",
+    "dev": "PORT=3000 node --max-old-space-size=8192 server.js",
     "build": "next build && next export && yarn postexport",
-    "dist": "yarn build && netlify-lambda build functions",
+    "dist": "yarn build",
     "export": "next export",
     "postexport": "node post-export.js",
     "distrelease": "yarn test && yarn dist",
@@ -38,7 +35,6 @@
     "@next/bundle-analyzer": "^9.5.2",
     "babel-jest": "^26.3.0",
     "jest": "^26.4.1",
-    "netlify-lambda": "^1.6.3",
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {
@@ -57,6 +53,7 @@
     "@vx/shape": "^0.0.198",
     "@vx/tooltip": "^0.0.198",
     "autoprefixer": "^9.8.6",
+    "beautiful-react-hooks": "^0.30.0",
     "classnames": "^2.2.6",
     "ethers": "^4.0.47",
     "feather-icons-react": "^0.4.1",
@@ -77,6 +74,7 @@
     "react-countup": "^4.3.3",
     "react-dom": "16.13.1",
     "react-i18next": "11.7.0",
-    "tailwindcss": "^1.8.6"
+    "tailwindcss": "^1.8.6",
+    "use-window-focus": "^1.1.1"
   }
 }

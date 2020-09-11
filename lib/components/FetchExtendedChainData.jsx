@@ -4,11 +4,11 @@ import {
   MAINNET_POLLING_INTERVAL
 } from 'lib/constants'
 import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
-import { AuthControllerContext } from 'lib/components/contextProviders/AuthControllerContextProvider'
 import { GeneralContext } from 'lib/components/contextProviders/GeneralContextProvider'
 import { useInterval } from 'lib/hooks/useInterval'
 import { fetchExtendedChainData } from 'lib/utils/fetchExtendedChainData'
 import { isEmptyObject } from 'lib/utils/isEmptyObject'
+import { networkNameToChainId } from 'lib/utils/networkNameToChainId'
 
 export const FetchExtendedChainData = (props) => {
   const {
@@ -19,17 +19,17 @@ export const FetchExtendedChainData = (props) => {
   const { paused } = generalContext
  
   const poolDataContext = useContext(PoolDataContext)
-  const { pool } = poolDataContext
-  
-  const authControllerContext = useContext(AuthControllerContext)
-  const { chainId, provider } = authControllerContext
-  
+  const { defaultReadProvider, pool } = poolDataContext
+
+  const chainId = networkNameToChainId(process.env.NEXT_JS_DEFAULT_ETHEREUM_NETWORK_NAME)
+  console.log(chainId)
+
   const [extendedChainData, setExtendedChainData] = useState({})
 
   const fetchDataFromInfura = async () => {
     try {
       const prizeStrategy = await fetchExtendedChainData(
-        provider,
+        defaultReadProvider,
         pool?.prizeStrategyAddress
       )
 

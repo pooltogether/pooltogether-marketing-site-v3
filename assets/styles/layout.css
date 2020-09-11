@@ -133,10 +133,6 @@ body {
     max-width: 1260px;
   }
 
-  .grid-wrapper.showing-network-banner {
-    grid-template-rows: 46px 120px 1fr;
-  }
-
   .sidebar {
     display: block;
   }
@@ -149,19 +145,11 @@ body {
   }
 }
 
-.grid-wrapper.showing-network-banner {
-  grid-template-rows: 46px 100px 1fr;
-}
-
 .header {
   display: block;
   grid-area: header;
   position: fixed;
   top: 0;
-}
-
-.header.showing-network-banner {
-  top: 46px;
 }
 
 .header > div {
@@ -188,10 +176,6 @@ body {
 .sidebar > div {
   position: sticky;
   top: 124px;
-}
-
-.sidebar.showing-network-banner > div {
-  top: 170px;
 }
 
 .content {

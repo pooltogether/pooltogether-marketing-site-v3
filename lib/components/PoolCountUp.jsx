@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import classnames from 'classnames'
 import CountUp from 'react-countup'
-import { usePreviousValue } from 'beautiful-react-hooks'; 
+import { usePreviousValue } from 'beautiful-react-hooks'
 
 export const PoolCountUp = (props) => {
   const { bold, fontSansRegular } = props

@@ -6,18 +6,15 @@ import {
   MAINNET_POLLING_INTERVAL
 } from 'lib/constants'
 import { GeneralContext } from 'lib/components/contextProviders/GeneralContextProvider'
-import { dynamicPlayerQuery } from 'lib/queries/dynamicPlayerQuery'
-import { dynamicSponsorQuery } from 'lib/queries/dynamicSponsorQuery'
 import { dynamicPrizePoolsQuery } from 'lib/queries/dynamicPrizePoolsQuery'
 import { dynamicPrizeStrategiesQuery } from 'lib/queries/dynamicPrizeStrategiesQuery'
 import { getPoolDataFromQueryResult } from 'lib/services/getPoolDataFromQueryResult'
 import { getPrizeStrategyDataFromQueryResult } from 'lib/services/getPrizeStrategyDataFromQueryResult'
-import { poolToast } from 'lib/utils/poolToast'
 
 export const DynamicQueries = (
   props,
 ) => {
-  const { poolAddresses, usersAddress, children } = props
+  const { poolAddresses, children } = props
  
   const generalContext = useContext(GeneralContext)
   const { paused } = generalContext
@@ -37,7 +34,6 @@ export const DynamicQueries = (
   })
 
   if (poolQueryError) {
-    poolToast.error(poolQueryError)
     console.error(poolQueryError)
   }
 
@@ -54,7 +50,6 @@ export const DynamicQueries = (
   })
 
   if (prizeStrategyQueryError) {
-    poolToast.error(prizeStrategyQueryError)
     console.error(prizeStrategyQueryError)
   }
 
@@ -64,69 +59,12 @@ export const DynamicQueries = (
 
 
 
-  let dynamicPlayerData
-
-  const {
-    loading: playerQueryLoading,
-    error: playerQueryError,
-    data: playerQueryData,
-    refetch: refetchPlayerQuery
-  } = useQuery(dynamicPlayerQuery, {
-    variables: {
-      playerAddress: usersAddress
-    },
-    fetchPolicy: 'network-only',
-    pollInterval: paused ? 0 : MAINNET_POLLING_INTERVAL,
-    skip: !usersAddress
-  })
-
-  if (playerQueryError) {
-    poolToast.error(playerQueryError)
-    console.error(playerQueryError)
-  }
-
-  if (playerQueryData) {
-    dynamicPlayerData = playerQueryData.player
-  }
-
-
-
-  let dynamicSponsorData
-
-  const {
-    loading: sponsorQueryLoading,
-    error: sponsorQueryError,
-    data: sponsorQueryData,
-    refetch: refetchSponsorQuery
-  } = useQuery(dynamicSponsorQuery, {
-    variables: {
-      sponsorAddress: usersAddress
-    },
-    fetchPolicy: 'network-only',
-    pollInterval: paused ? 0 : MAINNET_POLLING_INTERVAL,
-    skip: !usersAddress
-  })
-
-  if (sponsorQueryError) {
-  //   poolToast.error(sponsorQueryError)
-    console.log(sponsorQueryError)
-  }
-
-  if (sponsorQueryData) {
-    dynamicSponsorData = sponsorQueryData.sponsor
-  }
-
-
-
-  const dynamicDataLoading = poolQueryLoading || prizeStrategyQueryLoading || playerQueryLoading || sponsorQueryLoading
+  
+  const dynamicDataLoading = poolQueryLoading || prizeStrategyQueryLoading
   
   return children({
     dynamicDataLoading,
     dynamicPoolData,
     dynamicPrizeStrategiesData,
-    dynamicPlayerData,
-    dynamicSponsorData,
-    refetchPlayerQuery,
-    refetchSponsorQuery,
   })
 }

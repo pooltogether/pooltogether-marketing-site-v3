@@ -8,7 +8,6 @@ import { scaleTime, scaleLinear } from '@vx/scale'
 import { extent, max } from 'd3-array'
 import { LinearGradient } from '@vx/gradient'
 
-import { ThemeContext } from 'lib/components/contextProviders/ThemeContextProvider'
 import { formatDate } from 'lib/utils/formatDate'
 import { numberWithCommas } from 'lib/utils/numberWithCommas'
 
@@ -36,10 +35,8 @@ export const DateValueLineGraph = (props) => {
 
   const svgRef = useRef(null)
 
-  const themeContext = useContext(ThemeContext)
-  const theme = themeContext.theme
-
-  const circleColor = theme === 'light' ? '#401C94' : '#ffffff'
+  const circleColor = '#401C94'
+  //  : '#ffffff'
 
   const id = props.id
   const series = props.data

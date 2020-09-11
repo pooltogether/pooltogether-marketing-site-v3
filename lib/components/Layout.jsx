@@ -1,29 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import classnames from 'classnames'
-import { useRouter } from 'next/router'
-import { AnimatePresence, motion, useViewportScroll } from 'framer-motion'
+import { motion, useViewportScroll } from 'framer-motion'
 
-import {
-  SUPPORTED_CHAIN_IDS,
-} from 'lib/constants'
-import { AuthControllerContext } from 'lib/components/contextProviders/AuthControllerContextProvider'
-import { NavAccount } from 'lib/components/NavAccount'
-import { DepositWizardContainer } from 'lib/components/DepositWizardContainer'
 import { HeaderLogo } from 'lib/components/HeaderLogo'
 import { NavMobile } from 'lib/components/NavMobile'
-import { NetworkText } from 'lib/components/NetworkText'
-import { WithdrawWizardContainer } from 'lib/components/WithdrawWizardContainer'
 import { Meta } from 'lib/components/Meta'
 import { Nav } from 'lib/components/Nav'
-import { LanguagePicker } from 'lib/components/LanguagePicker'
-import { Settings } from 'lib/components/Settings'
-import { SignInFormContainer } from 'lib/components/SignInFormContainer'
-import { WrongNetworkModal } from 'lib/components/WrongNetworkModal'
-import { chainIdToNetworkName } from 'lib/utils/chainIdToNetworkName'
-
-const onlyUnique = (value, index, self) => {
-  return self.indexOf(value) === index
-}
+import { Footer } from 'lib/components/Footer'
+// import { LanguagePicker } from 'lib/components/LanguagePicker'
 
 export const Layout = (props) => {
   const {
@@ -37,59 +21,15 @@ export const Layout = (props) => {
     setYScrollPosition(y)
   })
 
-  const [showTransactionsDialog, setShowTransactionsDialog] = useState(false)
+  // const router = useRouter()
 
-  const openTransactions = (e) => {
-    e.preventDefault()
-    setShowTransactionsDialog(true)
-  }
-
-  const closeTransactions = (e) => {
-    if (e) {
-      e.preventDefault()
-    }
-    setShowTransactionsDialog(false)
-  }
-  
-  const router = useRouter()
-
-  const signIn = router.query.signIn
-  const deposit = /deposit/.test(router.asPath)
-  const withdraw = /withdraw/.test(router.asPath)
-
-
-  const authControllerContext = useContext(AuthControllerContext)
-  const { supportedNetwork, usersAddress, chainId } = authControllerContext
-
-  // this is useful for showing a big banner at the top that catches
-  // people's attention
-  const showingBanner = false
-  // const showingBanner = chainId !== 1
-
-  let supportedNetworkNames = SUPPORTED_CHAIN_IDS.map(chainId => chainIdToNetworkName(chainId))
-  supportedNetworkNames = supportedNetworkNames.filter(onlyUnique)
+  // const signIn = router.query.signIn
+  // const deposit = /deposit/.test(router.asPath)
+  // const withdraw = /withdraw/.test(router.asPath)
 
   return <>
     <Meta />
 
-    <AnimatePresence>
-      {signIn && <SignInFormContainer />}
-    </AnimatePresence>
-
-    <AnimatePresence>
-      {deposit && <DepositWizardContainer
-        {...props}
-      />}
-    </AnimatePresence>
-
-    <AnimatePresence>
-      {withdraw && <WithdrawWizardContainer
-        {...props}
-      />}
-    </AnimatePresence>
-
-    <WrongNetworkModal />
-    
     <div
       className='flex flex-col w-full'
       style={{
@@ -99,45 +39,12 @@ export const Layout = (props) => {
       <motion.div
         className={classnames(
           'header fixed w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto l-0 r-0',
-          { 
-            'showing-network-banner': showingBanner
-          }
         )}
       >
         <div
           className='flex justify-between items-center px-4 xs:px-12 sm:px-10 py-4 xs:pb-6 sm:pt-5 sm:pb-7 mx-auto'
         >
           <HeaderLogo />
-
-          <div
-            className={classnames(
-              'flex items-center justify-end flex-row flex-wrap relative',
-            )}
-            style={{
-              lineHeight: 0
-            }}
-          >
-            {usersAddress && <>
-              <NavAccount
-                openTransactions={openTransactions}
-                closeTransactions={closeTransactions}
-                showTransactionsDialog={showTransactionsDialog}
-              />
-            </>}
-            
-            {usersAddress && chainId && chainId !== 1 && <>
-              <NetworkText
-                openTransactions={openTransactions}
-              />
-            </>}
-
-            {/* this pushes the lang picker and settings gear onto it's own roll on mobile/tablet */}
-            <div className='w-full sm:hidden'></div>
-
-            <LanguagePicker />
-
-            <Settings />
-          </div>
         </div>
 
         <motion.div
@@ -167,17 +74,11 @@ export const Layout = (props) => {
       <div
         className={classnames(
           'grid-wrapper',
-          {
-            'showing-network-banner': showingBanner
-          }
         )}
       >
         <div
           className={classnames(
             'sidebar hidden sm:block z-20',
-            {
-              'showing-network-banner': showingBanner
-            }
           )}
         >
           <Nav />
@@ -206,12 +107,12 @@ export const Layout = (props) => {
                 </div>
               </div>
 
-              {/* 
+              
               <div
                 className='main-footer z-10'
               >
                 <Footer />
-              </div> */}
+              </div>
               </div>
             </div>
           </div>

@@ -1,25 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ethers } from 'ethers'
 import { useRouter } from 'next/router'
 
-import { AuthControllerContext } from 'lib/components/contextProviders/AuthControllerContextProvider'
 import { FetchGenericChainData } from 'lib/components/FetchGenericChainData'
-import { FetchUsersChainData } from 'lib/components/FetchUsersChainData'
 import { GraphDataQueries } from 'lib/components/queryComponents/GraphDataQueries'
 import { getContractAddresses } from 'lib/services/getContractAddresses'
-import { poolToast } from 'lib/utils/poolToast'
 import { readProvider } from 'lib/utils/readProvider'
+import { networkNameToChainId } from 'lib/utils/networkNameToChainId'
 
 export const PoolDataContext = React.createContext()
 
 export const PoolDataContextProvider = (props) => {
-  const authControllerContext = useContext(AuthControllerContext)
-  const {
-    supportedNetwork,
-    networkName,
-    chainId,
-    usersAddress
-  } = authControllerContext
+  const networkName = process.env.NEXT_JS_DEFAULT_ETHEREUM_NETWORK_NAME
+  const chainId = networkNameToChainId(networkName)
+  console.log(chainId)
 
   const [defaultReadProvider, setDefaultReadProvider] = useState({})
 
@@ -34,30 +27,17 @@ export const PoolDataContextProvider = (props) => {
     getReadProvider()
   }, [networkName])
 
-  let poolAddresses
-  try {
-    if (supportedNetwork) {
-      poolAddresses = getContractAddresses(chainId)
-    }
-  } catch (e) {
-    poolToast.error(e)
-    console.error(e)
-  }
+  const poolAddresses = getContractAddresses(chainId)
 
   return <>
     <GraphDataQueries
       {...props}
       poolAddresses={poolAddresses}
-      usersAddress={usersAddress}
     >
       {({
         graphDataLoading,
         dynamicPoolData,
         dynamicPrizeStrategiesData,
-        dynamicPlayerData,
-        dynamicSponsorData,
-        refetchPlayerQuery,
-        refetchSponsorQuery,
       }) => {
         return <FetchGenericChainData
           {...props}
@@ -68,6 +48,7 @@ export const PoolDataContextProvider = (props) => {
           {({ genericChainData }) => {
             let pools = []
 
+            
             if (!graphDataLoading) {
               pools = [
                 {
@@ -123,71 +104,19 @@ export const PoolDataContextProvider = (props) => {
               }
             }
 
-            const poolAddress = pool?.poolAddress
-            const underlyingCollateralDecimals = pool?.underlyingCollateralDecimals
-
-            let usersTicketBalance = 0
-            let usersTicketBalanceBN = ethers.utils.bigNumberify(0)
-
-            if (pool && dynamicPlayerData) {
-              const player = dynamicPlayerData.find(data => data.prizePool.id === poolAddress)
-
-              if (player && underlyingCollateralDecimals) {
-                usersTicketBalance = Number(ethers.utils.formatUnits(
-                  player.balance,
-                  Number(underlyingCollateralDecimals)
-                ))
-                usersTicketBalanceBN = ethers.utils.bigNumberify(player.balance)
-              }
-            }
-
-            let usersSponsorshipBalance = 0
-            let usersSponsorshipBalanceBN = ethers.utils.bigNumberify(0)
-
-            if (pool && dynamicSponsorData) {
-              const sponsor = dynamicSponsorData.find(data => data.prizePool.id === poolAddress)
-
-              if (sponsor && underlyingCollateralDecimals) {
-                usersSponsorshipBalance = Number(ethers.utils.formatUnits(
-                  sponsor.balance,
-                  Number(underlyingCollateralDecimals)
-                ))
-                usersSponsorshipBalanceBN = ethers.utils.bigNumberify(sponsor.balance)
-              }
-            }
-
-
-            return <FetchUsersChainData
-              {...props}
-              provider={defaultReadProvider}
-              pool={pool}
-              usersAddress={usersAddress}
-            >
-              {({ usersChainData }) => {
-                return <PoolDataContext.Provider
-                  value={{
-                    loading: graphDataLoading,
-                    pool,
-                    pools,
-                    poolAddresses,
-                    dynamicPoolData,
-                    dynamicPlayerData,
-                    genericChainData,
-                    refetchPlayerQuery,
-                    refetchSponsorQuery,
-                    usersChainData,
-                    usersSponsorshipBalance,
-                    usersSponsorshipBalanceBN,
-                    usersTicketBalance,
-                    usersTicketBalanceBN,
-                  }}
-                >
-                  {props.children}
-                </PoolDataContext.Provider>
-
-
+            return <PoolDataContext.Provider
+              value={{
+                loading: graphDataLoading,
+                defaultReadProvider,
+                pool,
+                pools,
+                poolAddresses,
+                dynamicPoolData,
+                genericChainData,
               }}
-            </FetchUsersChainData>
+            >
+              {props.children}
+            </PoolDataContext.Provider>
           }}
         </FetchGenericChainData>
       }}

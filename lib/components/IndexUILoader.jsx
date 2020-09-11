@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ContentLoader from 'react-content-loader'
-
-import { ThemeContext } from 'lib/components/contextProviders/ThemeContextProvider'
 
 export const IndexUILoader = (
   props,
@@ -10,9 +8,7 @@ export const IndexUILoader = (
     return null
   }
   
-  const themeContext = useContext(ThemeContext)
-  const theme = themeContext.theme
-
+  const theme = 'light'
   const bgColor = theme === 'light' ? '#ffffff' : '#401C94'
   const foreColor = theme === 'light' ? '#f5f5f5' : '#501C94'
 

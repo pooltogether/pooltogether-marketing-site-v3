@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import i18next from "../i18n"
-import * as Fathom from 'fathom-client'
-import * as Sentry from '@sentry/browser'
-import Cookies from 'js-cookie'
-import { ethers } from 'ethers'
-import { ToastContainer } from 'react-toastify'
+import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import { REFERRER_ADDRESS_KEY } from 'lib/constants'
 import { AllContextProviders } from 'lib/components/contextProviders/AllContextProviders'
 import { Layout } from 'lib/components/Layout'
 import { V3ApolloWrapper } from 'lib/components/V3ApolloWrapper'
-import { V3LoadingDots } from 'lib/components/V3LoadingDots'
 
 import "@reach/dialog/styles.css"
 import "@reach/menu-button/styles.css"
 import '@reach/tooltip/styles.css'
-import 'react-toastify/dist/ReactToastify.css'
 
 import 'assets/styles/utils.css'
 import 'assets/styles/index.css'
-import 'assets/styles/toast-blur.css'
 import 'assets/styles/layout.css'
 import 'assets/styles/loader.css'
 import 'assets/styles/themes.css'
@@ -28,15 +18,9 @@ import 'assets/styles/themes.css'
 import 'assets/styles/typography.css'
 import 'assets/styles/tables.css'
 import 'assets/styles/pool.css'
-import 'assets/styles/pool-toast.css'
 import 'assets/styles/animations.css'
 import 'assets/styles/transitions.css'
 
-import 'assets/styles/radios.css'
-import 'assets/styles/interactable-cards.css'
-import 'assets/styles/tabs.css'
-
-import 'assets/styles/bnc-onboard--custom.css'
 import 'assets/styles/reach--custom.css'
 import 'assets/styles/vx--custom.css'
 
@@ -48,37 +32,7 @@ if (process.env.NEXT_JS_SENTRY_DSN) {
 }
 
 function MyApp({ Component, pageProps, router }) {
-  const [initialized, setInitialized] = useState(false)
-
-  useEffect(() => {
-    if (router?.query?.referrer) {
-      const referrerAddress = router.query.referrer
-
-      try {
-        ethers.utils.getAddress(referrerAddress)
-
-        Cookies.set(REFERRER_ADDRESS_KEY, referrerAddress)
-      } catch (e) {
-        console.error(`referrer address was an invalid Ethereum address:`, e.message)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    Fathom.load('ESRNTJKP', {
-      includedDomains: ['staging-v3.pooltogether.com']
-    })
-
-    function onRouteChangeComplete() {
-      Fathom.trackPageview()
-    }
-
-    router.events.on('routeChangeComplete', onRouteChangeComplete)
-
-    return () => {
-      router.events.off('routeChangeComplete', onRouteChangeComplete)
-    }
-  }, [])
+  // const [initialized, setInitialized] = useState(false)
 
   useEffect(() => {
     const handleExitComplete = () => {
@@ -93,28 +47,23 @@ function MyApp({ Component, pageProps, router }) {
     }
   }, [])
 
-  useEffect(() => {
-    const initi18next = async () => {
-      await i18next.initPromise.then(() => {
-        setInitialized(true)
-      })
-    }
-    initi18next()
-  }, [])
+  // useEffect(() => {
+  //   const initi18next = async () => {
+  //     await i18next.initPromise.then(() => {
+  //       setInitialized(true)
+  //     })
+  //   }
+  //   initi18next()
+  // }, [])
 
-  if (!initialized) {
-    return <div
-      className='h-full w-full fixed t-0 r-0 l-0 b-0 text-white flex flex-col items-center justify-center'
-      style={{ backgroundColor: '#1E0B43', color: 'white' }}
-    >
-      <V3LoadingDots />
-      <h4
-        className='-mt-6'
-      >
-        Filling up the pools...
-      </h4>
-    </div>
-  }
+  // if (!initialized) {
+  //   return <div
+  //     className='h-full w-full fixed t-0 r-0 l-0 b-0 text-white flex flex-col items-center justify-center'
+  //     style={{ backgroundColor: '#1E0B43', color: 'white' }}
+  //   >
+  //     <V3LoadingDots />
+  //   </div>
+  // }
   
   return <>
     <V3ApolloWrapper>
@@ -152,12 +101,6 @@ function MyApp({ Component, pageProps, router }) {
           </AnimatePresence>
         </Layout>
       </AllContextProviders>
-
-      <ToastContainer
-        className='pool-toast'
-        position='top-center'
-        autoClose={7000}
-      />
     </V3ApolloWrapper>
   </>
 }
