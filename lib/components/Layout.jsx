@@ -52,52 +52,37 @@ export const Layout = (props) => {
         </div>
       </div>
 
-
-      <div
-        className={classnames(
-          'grid-wrapper',
-        )}
-      >
-        <div className='content'>
+      <div className='content'>
+        <div
+          className='pool-container mx-auto w-full flex flex-grow relative z-10 h-full page px-4 sm:px-0 pt-6 xs:pt-6 sm:pt-8'
+        >
           <div
-            className='pool-container mx-auto w-full flex flex-grow relative z-10 h-full page px-4 sm:px-0 pt-6 xs:pt-6 sm:pt-8'
+            className='flex flex-col flex-grow'
           >
+
             <div
-              className='flex flex-col flex-grow'
+              className='relative flex flex-col flex-grow h-full z-10 text-white'
+              style={{
+                flex: 1
+              }}
             >
-
               <div
-                className='relative flex flex-col flex-grow h-full z-10 text-white'
-                style={{
-                  flex: 1
-                }}
+                className='my-0 text-inverse sm:pt-2 lg:pt-4'
               >
-                <div
-                  className='my-0 text-inverse sm:pt-2 lg:pt-4'
-                >
-                  {React.cloneElement(children, {
-                    ...props,
-                  })}
-                </div>
-              </div>
-
-              
-              
+                {React.cloneElement(children, {
+                  ...props,
+                })}
               </div>
             </div>
           </div>
-
         </div>
+      </div>
 
 
       <div
-        className='main-footer'
+        className='footer--container'
       >
-        <div
-          className='pool-container mx-auto'
-        >
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </div>
   </>

@@ -185,23 +185,27 @@ input[type='submit'][disabled] {
 	}
 }
 
-.main-footer {
+.footer--container {
   background-color: #0C021B;
 }
 
 .footer {
 }
 
-.footer a {
+/* .footer a {
   @apply text-primary border-0;
 }
 
 .footer a:hover {
   @apply text-secondary;
-}
+} */
 
 .footer .img-link:hover {
   @apply border-0 no-underline;
+}
+
+.footer--pool-logo-container {
+  width: 133px;
 }
 
 .pool-logo {

@@ -23,6 +23,17 @@ body {
   }
 }
 
+
+.pool-container {
+  max-width: 90vw;
+}
+
+@screen sm {
+  .pool-container {
+    max-width: 800px;
+  }
+}
+
 @screen lg {
   .pool-container {
     max-width: 1160px;
@@ -71,74 +82,4 @@ body {
 .fadeOut {
   animation-name: fadeOut;
   pointer-events: none;
-}
-
-.grid-wrapper {
-  display: grid;
-  height: 100vh;
-  margin: 0 auto;
-  width: 100%;
-  grid-gap: 0;
-  overflow: hidden;
-  row-gap: 0;
-  grid-template-areas:
-    "banner"
-    "header"
-    "content";
-  grid-template-columns: 1fr;
-  grid-template-rows: 0 100px 1fr;
-}
-
-@screen sm {
-  .grid-wrapper {
-    grid-template-rows: 0 120px 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "banner banner"
-      "header  header"
-      "content content";
-    max-width: 900px;
-  }
-
-  .sidebar {
-    display: block;
-  }
-}
-
-@screen lg {
-  .grid-wrapper {
-    grid-template-columns: 1fr;
-    max-width: 1200px;
-  }
-}
-
-.header {
-  display: block;
-  grid-area: header;
-  /* position: fixed;
-  top: 0; */
-}
-
-.sidebar {
-  grid-area: sidebar;
-  width: 240px;
-}
-
-@screen lg {
-  .sidebar {
-    width: 300px;
-  }
-}
-
-.sidebar > div {
-  position: sticky;
-  top: 124px;
-}
-
-.content {
-  grid-area: content;
-}
-
-.banner {
-  grid-area: banner;
 }
