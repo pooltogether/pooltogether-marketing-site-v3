@@ -38,7 +38,7 @@ export const NavMobileList = () => (
       <NavMobileListItem
         link={link}
         index={index}
-        key={link}
+        key={`nav-mobile-listitem-${index}`}
       />
     ))}
   </motion.ul>

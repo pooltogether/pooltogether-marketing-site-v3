@@ -21,7 +21,11 @@ class MyDocument extends Document {
         >
           <Main />
           <NextScript />
+          <script src='/paper.js'></script>
+          
+          <script canvas='canvas' type="text/paperscript" src="/paper-waves.js"></script>
 
+          
           <Meta />
         </body>
       </Html>

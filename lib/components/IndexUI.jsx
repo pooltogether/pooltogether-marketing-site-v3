@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { Trans, useTranslation } from 'lib/../i18n'
 import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
 import { IndexUILoader } from 'lib/components/IndexUILoader'
+import { ButtonLink } from 'lib/components/ButtonLink'
 // import { PoolList } from 'lib/components/PoolList'
 import { Tagline } from 'lib/components/Tagline'
 
@@ -18,6 +19,8 @@ export const IndexUI = (
   } = poolDataContext
 
   return <>
+    <canvas id="canvas" resize='true'></canvas>
+
     <h1
       className='banner-text mx-auto font-bold text-center'
     >
@@ -34,6 +37,18 @@ export const IndexUI = (
         }}
       /> */}
     </h1>
+
+
+    <div
+      className='text-center'
+    >
+      <ButtonLink 
+        href='https://app.pooltogether.com'
+        as='https://app.pooltogether.com'
+      >
+        {t('getTickets')}
+      </ButtonLink>
+    </div>
 
     {/* <Tagline /> */}
   </>
