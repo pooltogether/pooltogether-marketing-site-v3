@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Link from 'next/link'
 
 import { useTranslation } from 'lib/../i18n'
 
@@ -7,6 +8,8 @@ import MediumFooterLogo from 'assets/images/medium-footer.svg'
 import GithubFooterLogo from 'assets/images/github-footer.svg'
 import DiscordLogo from 'assets/images/discord-footer.svg'
 import TwitterFooterLogo from 'assets/images/twitter-footer.svg'
+
+import PoolTogetherLogo from 'assets/images/pooltogether-logo.svg'
 
 export const Footer = () => {
   const [t] = useTranslation()
@@ -23,11 +26,24 @@ export const Footer = () => {
       className='flex flex-col sm:flex-row justify-between mt-3 sm:mt-4 lg:mt-6 pb-5 lg:pb-8'
     >
       <div className=''>
-        <span className='mb-2 sm:mb-0 invisible sm:visible block sm:inline'>
-          &copy; {new Date().getFullYear()} <a href='https://www.pooltogether.com'>
-            PoolTogether Inc.
-          </a>
-        </span>
+        <div
+          className='footer--pool-logo-container justify-start flex items-center'
+        >
+          <Link
+            href='/'
+            as='/'
+            shallow
+          >
+            <a
+              title={'Back to home'}
+              className='pool-logo border-0 trans block w-full'
+            >
+              <img
+                src={PoolTogetherLogo}
+              />
+            </a>
+          </Link>
+        </div>
 
         <a
           title='faq'

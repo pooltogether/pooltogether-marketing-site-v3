@@ -35,19 +35,6 @@ export const IndexUI = (
       /> */}
     </h1>
 
-    {/* <h6
-      className='text-accent-2 mb-6 capitalize'
-    >
-      {t('pools')}
-    </h6> */}
-
-    {/* {loading ?
-      <IndexUILoader /> :
-      <PoolList
-        pools={pools}
-      />
-    } */}
-
-    <Tagline />
+    {/* <Tagline /> */}
   </>
 }

@@ -79,6 +79,7 @@ body {
   margin: 0 auto;
   width: 100%;
   grid-gap: 0;
+  overflow: hidden;
   row-gap: 0;
   grid-template-areas:
     "banner"
@@ -114,8 +115,8 @@ body {
 .header {
   display: block;
   grid-area: header;
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
 }
 
 .sidebar {

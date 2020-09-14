@@ -185,6 +185,13 @@ input[type='submit'][disabled] {
 	}
 }
 
+.main-footer {
+  background-color: #0C021B;
+}
+
+.footer {
+}
+
 .footer a {
   @apply text-primary border-0;
 }
@@ -198,36 +205,16 @@ input[type='submit'][disabled] {
 }
 
 .pool-logo {
-  height: 60px;
+  height: 52px;
   position: relative;
   z-index: 1;
-  width: 138px;
+  width: 133px;
 }
 
 .pool-logo:hover {
   background-color: transparent;
 }
  
-.pool-logo:after {
-  content: '';
-  background-size: cover;
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-}
-
-@screen sm {
-  .pool-logo:after {
-    height: 60px;
-    width: 151px;
-  }
-}
-
 .banner-text {
   font-size: calc(2vw + 30px);
   line-height: 1.2;
