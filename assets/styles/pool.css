@@ -191,25 +191,11 @@ input[type='submit'][disabled] {
   height: 60px;
   position: relative;
   z-index: 1;
-  width: 35px;
+  width: 138px;
 }
 
 .pool-logo:hover {
   background-color: transparent;
-}
-
-@screen xs {
-  .pool-logo {
-    height: 66px;
-    width: 39px;
-  }
-}
-
-@screen sm {
-  .pool-logo {
-    height: 60px;
-    width: 138px;
-  }
 }
  
 .pool-logo:after {
@@ -265,4 +251,71 @@ input[type='submit'][disabled] {
 .button-scale:focus,
 .button-scale:active {
   transform: scale(1.02) translateY(-3px);
+}
+
+
+
+
+
+
+.nav-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: #190742;
+  z-index: 40;
+}
+
+.hamburger-button {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 33px;
+  right: 36px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 50;
+}
+
+.hamburger-button > svg {
+  margin: auto;
+}
+
+ul.nav-mobile-list,
+li.nav-mobile-listitem {
+  margin: 0;
+  padding: 0;
+  z-index: 50;
+}
+
+ul.nav-mobile-list {
+  padding: 25px;
+  position: absolute;
+  top: 100px;
+  width: 230px;
+}
+
+li.nav-mobile-listitem {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }

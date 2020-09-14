@@ -30,45 +30,26 @@ export const Layout = (props) => {
   return <>
     <Meta />
 
+    <NavMobile />
+
     <div
       className='flex flex-col w-full'
       style={{
         minHeight: '100vh'
       }}
     >
-      <motion.div
+      <div
         className={classnames(
           'header fixed w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto l-0 r-0',
         )}
       >
         <div
-          className='flex justify-between items-center px-4 xs:px-12 sm:px-10 py-4 xs:pb-6 sm:pt-5 sm:pb-7 mx-auto'
+          className='flex justify-between items-center w-full px-4 sm:px-0 py-4 mx-auto'
         >
           <HeaderLogo />
+          <Nav />
         </div>
-
-        <motion.div
-          className='w-full'
-          style={{
-            boxShadow: 'rgba(0, 0, 0, 0.025) 0px 0px 1px 1px, rgba(0, 0, 0, 0.1) 0px 1px 7px 1px',
-            height: 0,
-            maxWidth: '100vw',
-          }}
-          animate={yScrollPosition > 1 ? 'enter' : 'exit'}
-          variants={{
-            enter: {
-              opacity: 1,
-              transition: {
-                duration: 1
-              }
-            },
-            exit: {
-              opacity: 0
-            }
-          }}
-        >
-        </motion.div>
-      </motion.div>
+      </div>
 
 
       <div
@@ -76,13 +57,6 @@ export const Layout = (props) => {
           'grid-wrapper',
         )}
       >
-        <div
-          className={classnames(
-            'sidebar hidden sm:block z-20',
-          )}
-        >
-          <Nav />
-        </div>
 
         <div className='content'>
           <div
@@ -118,8 +92,6 @@ export const Layout = (props) => {
           </div>
 
         </div>
-
-      <NavMobile />
     </div>
   </>
 }

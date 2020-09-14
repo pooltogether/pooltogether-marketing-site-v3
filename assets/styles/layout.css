@@ -23,30 +23,6 @@ body {
   }
 }
 
-.nav--pool-logo-container {
-  width: 50px;
-}
-
-.nav--account-controls-container {
-  max-width: 244px;
-}
-
-@screen xs {
-  .nav--pool-logo-container {
-    width: 80px;
-  }
-}
-
-@screen sm {
-  .nav--pool-logo-container {
-    min-width: 154px;
-  }
-
-  .nav--account-controls-container {
-    max-width: 560px;
-  }
-}
-
 @screen lg {
   .nav-and-footer-container {
     max-width: 1400px;
@@ -130,7 +106,7 @@ body {
       "banner banner"
       "header  header"
       "sidebar  content";
-    max-width: 1260px;
+    max-width: 900px;
   }
 
   .sidebar {
@@ -141,24 +117,31 @@ body {
 @screen lg {
   .grid-wrapper {
     grid-template-columns: 300px 1fr;
-    max-width: 1460px;
+    max-width: 1200px;
   }
 }
 
 .header {
   display: block;
+  /* display: none; */
   grid-area: header;
   position: fixed;
   top: 0;
 }
 
 .header > div {
-  max-width: 1280px;
+  max-width: 600px;
+}
+
+@screen sm {
+  .header > div {
+    max-width: 860px;
+  }
 }
 
 @screen lg {
   .header > div {
-    max-width: 1460px;
+    max-width: 1160px;
   }
 }
 

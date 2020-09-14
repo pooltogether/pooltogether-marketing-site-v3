@@ -15,8 +15,8 @@ module.exports = {
     // lg (1481px+)
     screens: {
       'xs': '501px',
-      'sm': '1041px',
-      'lg': '1481px'
+      'sm': '901px',
+      'lg': '1201px'
     },
     colors: {
       // black: colors.black,

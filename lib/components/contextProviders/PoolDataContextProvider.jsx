@@ -12,7 +12,6 @@ export const PoolDataContext = React.createContext()
 export const PoolDataContextProvider = (props) => {
   const networkName = process.env.NEXT_JS_DEFAULT_ETHEREUM_NETWORK_NAME
   const chainId = networkNameToChainId(networkName)
-  console.log(chainId)
 
   const [defaultReadProvider, setDefaultReadProvider] = useState({})
 
