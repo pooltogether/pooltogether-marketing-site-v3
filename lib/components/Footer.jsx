@@ -4,11 +4,12 @@ import Link from 'next/link'
 
 import { useTranslation } from 'lib/../i18n'
 
-import MailFooterIcon from 'assets/images/mail-footer.svg'
-import MediumFooterLogo from 'assets/images/medium-footer.svg'
-import GithubFooterLogo from 'assets/images/github-footer.svg'
-import DiscordFooterLogo from 'assets/images/discord-footer.svg'
-import TwitterFooterLogo from 'assets/images/twitter-footer.svg'
+// import MailIcon from 'assets/images/mail-footer.svg'
+
+import MediumLogo from 'assets/images/medium-logo.svg'
+import GithubLogo from 'assets/images/github-logo.svg'
+import DiscordLogo from 'assets/images/discord-logo.svg'
+import TwitterLogo from 'assets/images/twitter-logo.svg'
 
 import PoolTogetherLogo from 'assets/images/pooltogether-logo.svg'
 
@@ -137,7 +138,7 @@ export const Footer = () => {
                     >
                       <img
                         alt='twitter logo'
-                        src={TwitterFooterLogo}
+                        src={TwitterLogo}
                         className='mr-4 w-4'
                       /> Twitter
                     </a>
@@ -151,7 +152,7 @@ export const Footer = () => {
                     >
                       <img
                         alt='discord logo'
-                        src={DiscordFooterLogo}
+                        src={DiscordLogo}
                         className='mr-4 w-4'
                       /> Discord
                     </a>
@@ -165,7 +166,7 @@ export const Footer = () => {
                     >
                       <img
                         alt='github logo'
-                        src={GithubFooterLogo}
+                        src={GithubLogo}
                         className='mr-4 w-4'
                       /> Github
                     </a>
@@ -179,7 +180,7 @@ export const Footer = () => {
                     >
                       <img
                         alt='medium logo'
-                        src={MediumFooterLogo}
+                        src={MediumLogo}
                         className='mr-4 w-4'
                       /> Medium
                     </a>
