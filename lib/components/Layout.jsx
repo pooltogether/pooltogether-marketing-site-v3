@@ -40,7 +40,7 @@ export const Layout = (props) => {
     >
       <div
         className={classnames(
-          'header fixed w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto l-0 r-0',
+          'header pool-container fixed w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto l-0 r-0',
         )}
       >
         <div
@@ -60,7 +60,7 @@ export const Layout = (props) => {
 
         <div className='content'>
           <div
-            className='pool-container w-full flex flex-grow relative z-10 h-full page px-4 xs:px-12 sm:px-10 pt-6 xs:pt-6 sm:pt-8'
+            className='pool-container mx-auto w-full flex flex-grow relative z-10 h-full page px-4 sm:px-0 pt-6 xs:pt-6 sm:pt-8'
           >
             <div
               className='flex flex-col flex-grow'

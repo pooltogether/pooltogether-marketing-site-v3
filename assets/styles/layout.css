@@ -24,19 +24,9 @@ body {
 }
 
 @screen lg {
-  .nav-and-footer-container {
-    max-width: 1400px;
-  }
-}
-
-@screen lg {
   .pool-container {
-    max-width: 1400px;
+    max-width: 1160px;
   }
-}
-
-.pool-max-width {
-  max-width: 1400px; 
 }
 
 .modal-max-width {
@@ -101,11 +91,11 @@ body {
 @screen sm {
   .grid-wrapper {
     grid-template-rows: 0 120px 1fr;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
       "banner banner"
       "header  header"
-      "sidebar  content";
+      "content content";
     max-width: 900px;
   }
 
@@ -116,33 +106,16 @@ body {
 
 @screen lg {
   .grid-wrapper {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 1fr;
     max-width: 1200px;
   }
 }
 
 .header {
   display: block;
-  /* display: none; */
   grid-area: header;
   position: fixed;
   top: 0;
-}
-
-.header > div {
-  max-width: 600px;
-}
-
-@screen sm {
-  .header > div {
-    max-width: 860px;
-  }
-}
-
-@screen lg {
-  .header > div {
-    max-width: 1160px;
-  }
 }
 
 .sidebar {

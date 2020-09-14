@@ -21,7 +21,10 @@ export const IndexUI = (
     <h1
       className='banner-text mx-auto font-bold text-center'
     >
-      hello!
+      <span className='text-flashy'>Win $1000 every week</span>
+      <div className='banner-text--small'>
+        just by saving your money.
+      </div>
       {/* <Trans
         i18nKey='youCouldWin'
         defaults='You could <flashy>win ${{totalPrizes}} every week</flashy> just by saving your money.'
