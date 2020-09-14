@@ -11,18 +11,36 @@ const variants = {
   }
 }
 
+const links = [
+  {
+    label: 'Docs',
+    href: '/docs',
+    as: '/docs'
+  },
+  {
+    label: 'Community',
+    href: '/community',
+    as: '/community'
+  },
+  {
+    label: 'App',
+    href: 'https://app.pooltogether.com',
+    as: 'https://app.pooltogether.com'
+  },
+]
+
 export const NavMobileList = () => (
   <motion.ul
     variants={variants}
     className='nav-mobile-list'
   >
-    {itemIds.map(i => (
+    {links.map((link, index) => (
       <NavMobileListItem
-        i={i}
-        key={i}
+        link={link}
+        index={index}
+        key={link}
       />
     ))}
   </motion.ul>
 )
 
-const itemIds = [0, 1, 2, 3, 4]

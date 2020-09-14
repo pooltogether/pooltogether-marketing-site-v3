@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const variants = {
   open: {
@@ -20,18 +21,27 @@ const variants = {
 
 const colors = ['#FF81ED', '#FFD1B3', '#69FEB8', '#80FFF6', '#5FA3FF']
 
-export const NavMobileListItem = ({ i }) => {
-  const style = { color: `${colors[i]}` }
+export const NavMobileListItem = ({ link, index }) => {
+  const style = { color: `${colors[index]}` }
 
-  return (
+  return <>
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className='font-bold'
+      className='font-bold text-center mb-6 text-xl'
       style={style}
     >
-      asdf
+      <Link
+        href={link.href}
+        as={link.as}
+      >
+        <a
+          style={style}
+        >
+          {link.label}
+        </a>
+      </Link>
     </motion.li>
-  )
+  </>
 }

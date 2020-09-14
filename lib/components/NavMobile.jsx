@@ -41,7 +41,7 @@ export const NavMobile = (props) => {
       animate={isOpen ? 'open' : 'closed'}
       custom={height}
       ref={containerRef}
-      className='sm:hidden nav-mobile'
+      className='flex items-center justify-center sm:hidden nav-mobile'
     >
       <motion.div className='background' variants={sidebar} />
       <NavMobileList />

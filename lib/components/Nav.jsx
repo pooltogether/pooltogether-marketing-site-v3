@@ -15,8 +15,8 @@ export const Nav = (props) => {
       className='justify-end items-center hidden sm:flex w-2/3'
     >
       <Link
-        href='/'
-        as='/'
+        href='/docs'
+        as='/docs'
         shallow
       >
         <a
