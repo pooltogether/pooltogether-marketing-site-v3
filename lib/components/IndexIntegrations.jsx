@@ -62,14 +62,14 @@ export const IndexIntegrations = () => {
 
 
  {/* sm:w-1/2 xl:w-1/3 */}
-      <div className='flex flex-col items-center rounded-lg bg-darkened p-4 sm:p-10 mt-8'>
+      <div className='flex flex-col items-center rounded-lg bg-darkened p-4 py-12 sm:p-10 mt-8'>
         <h2
           className='my-0 leading-tight mb-4 w-3/4 text-center'
         >
           Try community-built interfaces
         </h2>
         <div
-          className='font-normal font-number sm:w-1/2 text-center text-xs sm:text-lg'
+          className='font-normal font-number sm:w-1/2 text-center text-xs sm:text-lg px-4'
         >
           Get inspired by what you can build on the PoolTogether protocol
         </div>
@@ -78,8 +78,8 @@ export const IndexIntegrations = () => {
 
         <motion.div
           className={classnames(
-            'flex flex-col md:flex-row md:flex-wrap justify-start items-start',
-            'mt-2 mb-4 rounded-xl text-base md:text-lg -mx-3',
+            'flex flex-col sm:flex-row sm:flex-wrap justify-start items-start',
+            'mt-8 mb-4 px-2 sm:px-0 rounded-xl text-base sm:text-lg',
           )}
           style={{
             flexBasis: '33.3333%'

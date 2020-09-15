@@ -26,17 +26,17 @@ export const GridItem = (props) => {
       title={`View ${title}`}
       target='_blank'
       rel='noopener noreferrer'
-      className='w-full md:w-1/3 flex-grow rounded-lg my-1 p-4 trans flex flex-col no-underline md:max-w-1/3 bg-primary text-white'
+      className='w-full sm:w-1/3 rounded-lg mb-4 p-4 trans flex flex-col no-underline sm:max-w-1/3 bg-primary text-white hover:bg-highlight-5'
       variants={itemVariants}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
     >
       <div
-        className='flex flex-col justify-center shadow-lg-alt hover:shadow-lg trans p-2 px-2 h-64 sm:h-40 md:h-64'
+        className='flex flex-col justify-center trans p-2 px-2 h-32 sm:h-64'
       >
         
         <div className='flex items-center justify-between'>
-          <div className=' font-bold text-xl md:text-2xl'>
+          <div className=' font-bold text-xl sm:text-2xl'>
             {title}
           </div>
           <img
@@ -46,7 +46,7 @@ export const GridItem = (props) => {
           />
         </div>
 
-        <div className='mt-2 no-underline text-gray-600 text-lg md:text-xl'>
+        <div className='mt-2 no-underline text-gray-600 text-sm sm:text-xl'>
           {description}
         </div>
       </div>
