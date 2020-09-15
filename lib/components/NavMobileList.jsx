@@ -1,4 +1,5 @@
 import * as React from 'react'
+import classnames from 'classnames'
 import { motion } from 'framer-motion'
 import { NavMobileListItem } from 'lib/components/NavMobileListItem'
 
@@ -29,10 +30,13 @@ const links = [
   },
 ]
 
-export const NavMobileList = () => (
+export const NavMobileList = (props) => (
   <motion.ul
     variants={variants}
-    className='nav-mobile-list'
+    className={classnames(
+      'nav-mobile-list',
+      props.className,
+    )}
   >
     {links.map((link, index) => (
       <NavMobileListItem
