@@ -8,7 +8,7 @@ import { GridItem } from 'lib/components/GridItem'
 // import CircleSvg from 'assets/images/circle.svg'
 // import MakerSvg from 'assets/images/maker.svg'
 import ArgentSvg from 'assets/images/argent.svg'
-import BotSvg from 'assets/images/noun_bot_1913795.svg'
+import BotSvg from 'assets/images/logo-ttbot@2x.png'
 import EBOSvg from 'assets/images/ebo.svg'
 import PillarSvg from 'assets/images/pillar.svg'
 import ZerionSvg from 'assets/images/zerion.svg'
@@ -22,7 +22,6 @@ export const IndexIntegrations = () => {
 
   useEffect(() => {
     if (inView) {
-      console.log('inview!')
       controls.start('visible')
     }
   }, [controls, inView])
@@ -78,12 +77,9 @@ export const IndexIntegrations = () => {
 
         <motion.div
           className={classnames(
-            'flex flex-col sm:flex-row sm:flex-wrap justify-start items-start',
-            'mt-8 mb-4 px-2 sm:px-0 rounded-xl text-base sm:text-lg',
+            'flex flex-col lg:flex-row lg:flex-wrap',
+            'mt-8 mb-4 px-2 lg:px-0 -mx-4 rounded-xl text-base lg:text-lg',
           )}
-          style={{
-            flexBasis: '33.3333%'
-          }}
           ref={ref}
           animate={controls}
           initial='hidden'
@@ -123,6 +119,7 @@ export const IndexIntegrations = () => {
             img={BotSvg}
             url='https://twitter.com/PoolTogetherBot'
             attribution={`bot by Sophia Bai from the Noun Project`}
+            imgStyle={{ width: 39, height: 34 }}
           />
 
           <GridItem

@@ -25,7 +25,7 @@ export const GeneralContextProvider = (props) => {
       windowFocused,
     }}
   >
-    <Modal
+    {/* <Modal
       zIndex={2000000}
       visible={!isOnline}
       header={t('noInternetConnection')}
@@ -36,7 +36,7 @@ export const GeneralContextProvider = (props) => {
       <p>
         {t('pleaseReconnectToInternet')}
       </p>
-    </Modal>
+    </Modal> */}
 
     {props.children}
   </GeneralContext.Provider>
