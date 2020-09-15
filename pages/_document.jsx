@@ -21,7 +21,7 @@ class MyDocument extends Document {
         >
           <Main />
           <NextScript />
-          <script src='/paper.js'></script>
+          {/* <script src='/paper.js'></script> */}
           
           <Meta />
         </body>

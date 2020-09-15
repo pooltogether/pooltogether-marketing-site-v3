@@ -41,8 +41,12 @@ export const Layout = (props) => {
       <div
         className={classnames(
           // fixed  l-0 r-0
-          'header pool-container w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto',
+          // 'header pool-container w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto',
+          'header pool-container w-full bg-body z-30 mx-auto',
         )}
+        style={{
+          height: 84
+        }}
       >
         <div
           className='flex justify-between items-center w-full px-4 sm:px-0 py-4 mx-auto'
@@ -53,21 +57,23 @@ export const Layout = (props) => {
       </div>
 
       <div className='content'>
+        {/* className='pool-container mx-auto w-full flex flex-grow relative z-10 h-full page px-4 sm:px-0 pt-6 xs:pt-6 sm:pt-8' */}
         <div
-          className='pool-container mx-auto w-full flex flex-grow relative z-10 h-full page px-4 sm:px-0 pt-6 xs:pt-6 sm:pt-8'
+          className='mx-auto w-full flex flex-grow relative z-10 h-full page'
         >
           <div
             className='flex flex-col flex-grow'
           >
 
             <div
-              className='relative flex flex-col flex-grow h-full z-10 text-white'
+              className='relative flex flex-col flex-grow h-full z-10'
               style={{
                 flex: 1
               }}
             >
               <div
-                className='my-0 text-inverse sm:pt-2 lg:pt-4'
+                className='text-inverse'
+                // className='text-inverse sm:pt-2 lg:pt-4'
               >
                 {React.cloneElement(children, {
                   ...props,

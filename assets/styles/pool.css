@@ -318,3 +318,55 @@ li.nav-mobile-listitem {
   align-items: center;
   cursor: pointer;
 }
+
+.bg-vid {
+  background-image: url('/bg-vid.jpg');
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* .bg-vid::after {
+  content: '';
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 4rem;
+  width: 100vw;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 70 500 60' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='500' height='500' style='stroke: none; fill: %234c249f;' /%3E%3Cpath d='M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z' style='stroke: none; fill: %23290B5A;'%3E%3C/path%3E%3C/svg%3E");
+} */
+
+.custom-shape-divider-top-1600195439 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.bg-vid-holo {
+  background-image: url('/bg-vid-holo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+}
+
+.bg-vid-circle {
+  @apply shadow-elevation;
+  background: #561FA3;
+  border-radius: 100%;
+  height: 104px;
+  width: 104px;
+}
+
+.bg-vid-tri {
+  background-image: url('/bg-vid-tri.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: -6px;
+  height: 42px;
+  width: 35px;
+}
