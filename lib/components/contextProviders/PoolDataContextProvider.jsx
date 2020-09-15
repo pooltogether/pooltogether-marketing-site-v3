@@ -16,7 +16,7 @@ export const PoolDataContextProvider = (props) => {
   const [defaultReadProvider, setDefaultReadProvider] = useState({})
 
   const router = useRouter()
-  const querySymbol = router.query.symbol && router.query.symbol.toLowerCase()
+  const querySymbol = router?.query?.symbol?.toLowerCase()
 
   useEffect(() => {
     const getReadProvider = async () => {
@@ -26,6 +26,7 @@ export const PoolDataContextProvider = (props) => {
     getReadProvider()
   }, [networkName])
 
+  console.log({ chainId})
   const poolAddresses = getContractAddresses(chainId)
 
   return <>
@@ -85,22 +86,12 @@ export const PoolDataContextProvider = (props) => {
               ]
             }
 
-            let pool
+            let pool = null
             if (querySymbol && pools?.length > 0) {
               pool = pools.find(_pool => {
-                let symbol
-                if (_pool && _pool.symbol) {
-                  symbol = _pool.symbol.toLowerCase()
-                }
-
-                if (_pool && symbol) {
-                  return symbol === querySymbol
-                }
+                let symbol = _pool?.symbol?.toLowerCase()
+                return symbol === querySymbol
               })
-
-              if (!pool) {
-                pool = null
-              }
             }
 
             return <PoolDataContext.Provider
