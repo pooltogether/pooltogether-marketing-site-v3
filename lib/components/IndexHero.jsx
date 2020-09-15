@@ -49,7 +49,7 @@ export const IndexHero = (
         <h1
           className='banner-text mx-auto font-bold text-center'
         >
-          <span className='text-flashy px-6 leading-10 sm:leading-none'>Win $1000 every week</span>
+          <span className='text-flashy px-4 leading-10 sm:leading-none'>Win $1000 every week</span>
           <div className='banner-text--small'>
             just by saving your money.
         </div>
@@ -79,10 +79,7 @@ export const IndexHero = (
       
       <div
         clipPath='url(#wave)'
-        className='bg-vid text-center relative'
-        style={{ 
-          height: '50vh'
-        }}
+        className='bg-vid text-center relative pb-12 sm:pb-0'
       >
         <div class="custom-shape-divider-top-1600195439">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -95,11 +92,10 @@ export const IndexHero = (
         </div>
         
         <div
-          className='flex pt-10 sm:pt-32 text-left px-6 sm:px-24 mx-auto'
-          style={{maxWidth: 1200}}
+          className='pool-container flex flex-col sm:flex-row pt-10 sm:pt-32 text-left px-6 mx-auto '
         >
           <div
-            className='w-1/2 pt-4 sm:pt-12'
+            className='sm:w-1/2 pt-8 sm:pt-12'
           >
             <h2
               className='text-flashy'
@@ -107,13 +103,13 @@ export const IndexHero = (
               PoolTogether
             </h2>
 
-            <div className='font-number font-bold text-xs sm:text-lg pr-20'>
+            <div className='font-number font-bold text-xs sm:text-lg sm:pr-20 pb-12 sm:pb-0'>
               is a protocol for no-loss money games powered by Ethereum.
             </div>
           </div>
 
           <div
-            className='w-1/2 flex flex-col items-center'
+            className='sm:w-1/2 flex flex-col items-center'
           >
             <div
               className='bg-vid-holo h-64 flex items-center justify-center'

@@ -6,7 +6,7 @@ import PoolTogetherLogo from 'assets/images/pooltogether-logo.svg'
 export const HeaderLogo = (props) => {
   return <>
     <div
-      className='nav--pool-logo-container justify-start flex items-center truncate w-1/3'
+      className='nav--pool-logo-container justify-start flex items-center truncate sm:w-1/3 mx-auto sm:mx-0'
     >
       <Link
         href='/'
@@ -15,7 +15,7 @@ export const HeaderLogo = (props) => {
       >
         <a
           title={'Back to home'}
-          className='pool-logo border-0 trans block w-full'
+          className='pool-logo border-0 trans block w-full '
         >
           <img src={PoolTogetherLogo} />
         </a>
