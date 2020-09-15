@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import dynamic from 'next/dynamic'
 
 import { Trans, useTranslation } from 'lib/../i18n'
 import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
@@ -6,6 +7,11 @@ import { IndexUILoader } from 'lib/components/IndexUILoader'
 import { ButtonLink } from 'lib/components/ButtonLink'
 // import { PoolList } from 'lib/components/PoolList'
 import { Tagline } from 'lib/components/Tagline'
+
+const PaperDynamic = dynamic(() =>
+  import('lib/components/paper').then(mod => mod.Paper),
+  { ssr: false }
+)
 
 export const IndexUI = (
   props,
@@ -19,7 +25,8 @@ export const IndexUI = (
   } = poolDataContext
 
   return <>
-    <canvas id="canvas" resize='true'></canvas>
+    {/* <canvas id="myCanvas" resize='true'></canvas> */}
+    <PaperDynamic />
 
     <h1
       className='banner-text mx-auto font-bold text-center'
