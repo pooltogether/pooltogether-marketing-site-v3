@@ -298,19 +298,28 @@ export const Footer = () => {
               className='flex justify-between w-full'
             >
               <a
-                className={linkClassNames}
+                className={classnames(
+                  'mt-2 sm:mt-4',
+                  linkClassNames,
+                )}
                 href=''
               >
                 Privacy
               </a>
               <a
-                className={linkClassNames}
+                className={classnames(
+                  'mt-2 sm:mt-4',
+                  linkClassNames,
+                )}
                 href=''
               >
                 Terms
               </a>
               <a
-                className={linkClassNames}
+                className={classnames(
+                  'mt-2 sm:mt-4',
+                  linkClassNames,
+                )}
                 href=''
               >
                 Sitemap
