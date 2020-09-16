@@ -515,3 +515,19 @@ li.nav-mobile-listitem {
     margin-top: 500px; 
   }
 }
+
+.bg-get-involved {
+  background-image: url('/bg-get-involved.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  height: auto;
+}
+
+.bg-overlay {
+  /* backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(22, 5, 40, 0.72); */
+
+  backdrop-filter: saturate(180%) blur(8px);
+  background-image: linear-gradient(265deg, rgba(108, 49, 245, 0.4) 0%, rgba(48, 220, 250, 0.45) 100%);
+}
