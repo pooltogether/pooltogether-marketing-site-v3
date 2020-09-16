@@ -26,7 +26,6 @@ export const PoolDataContextProvider = (props) => {
     getReadProvider()
   }, [networkName])
 
-  console.log({ chainId})
   const poolAddresses = getContractAddresses(chainId)
 
   return <>

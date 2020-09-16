@@ -36,7 +36,7 @@ export const GridItemBackedBy = (props) => {
       whileTap={{ scale: 0.97 }}
     >
       <div
-        className='bg-secondary hover:bg-highlight-5 flex flex-col justify-center hover:shadow-purple-xl trans p-2 xs:px-10 h-20 rounded-lg'
+        className='interactable-chip hover:shadow-xl flex flex-col justify-center trans p-2 xs:px-10 h-20'
       >
         <img
           src={img}

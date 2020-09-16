@@ -15,7 +15,6 @@ export const IndexBackedBy = () => {
 
   useEffect(() => {
     if (inView) {
-      console.log('inview!')
       controls.start('visible')
     }
   }, [controls, inView])

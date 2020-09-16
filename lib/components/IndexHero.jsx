@@ -41,7 +41,10 @@ export const IndexHero = (
 
       <div
         className='pt-12'
-        style={{ height: 'calc(50vh - 84px)' }}
+        style={{
+          height: 'calc(40vh - 84px)',
+          minHeight: 230
+        }}
       >
         {/* <canvas id="myCanvas" resize='true'></canvas> */}
         {/* <PaperDynamic /> */}
@@ -81,7 +84,7 @@ export const IndexHero = (
         clipPath='url(#wave)'
         className='bg-vid text-center relative pb-12 sm:pb-0'
       >
-        <div class="custom-shape-divider-top-1600195439">
+        <div className='custom-shape-divider-top-1600195439 pointer-events-none'>
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
@@ -92,10 +95,10 @@ export const IndexHero = (
         </div>
         
         <div
-          className='pool-container flex flex-col sm:flex-row pt-10 sm:pt-32 text-left px-6 mx-auto '
+          className='pool-container flex flex-col sm:flex-row pt-10 sm:mt-32 sm:pt-20 text-left mx-auto'
         >
           <div
-            className='sm:w-1/2 pt-8 sm:pt-12'
+            className='mx-auto w-10/12 xs:w-9/12 sm:w-1/2 pt-8 sm:pt-12 text-center sm:text-left'
           >
             <h2
               className='text-flashy'
@@ -109,28 +112,26 @@ export const IndexHero = (
           </div>
 
           <div
-            className='sm:w-1/2 flex flex-col items-center'
+            className='sm:w-1/2 flex flex-col items-center z-10'
           >
-            <div
-              className='bg-vid-holo h-64 flex items-center justify-center'
+            <button
+              onClick={startVideo}
+              className='bg-vid-holo h-64 flex items-center justify-center trans'
               role='img'
               aria-label='Holographic gradient'
             >
-              <button
-                onClick={startVideo}
+              <div
                 className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
               >
                 <div
                   className='bg-vid-tri'
-                >
-                  
-                </div>
-              </button>
-            </div>
+                />
+              </div>
+            </button>
 
             <button
               onClick={startVideo}
-              className='text-center font-bold my-2 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
+              className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
             >
               Watch how it works!
             </button>

@@ -40,8 +40,6 @@ export const Layout = (props) => {
     >
       <div
         className={classnames(
-          // fixed  l-0 r-0
-          // 'header pool-container w-full bg-body z-30 pt-1 pb-1 xs:pt-2 xs:pb-0 sm:py-0 mx-auto',
           'header pool-container w-full bg-body z-30 mx-auto',
         )}
         style={{

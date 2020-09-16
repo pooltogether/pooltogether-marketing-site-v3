@@ -7,6 +7,8 @@ export const Button = (props) => {
   const classes = getButtonClasses(props)
 
   let newProps = omit(props, [
+    'height',
+    'rounded',
     'noAnim',
     'outline',
     'secondary',

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ToastContainer } from 'react-toastify'
 
 import { AllContextProviders } from 'lib/components/contextProviders/AllContextProviders'
 import { Layout } from 'lib/components/Layout'
 import { V3ApolloWrapper } from 'lib/components/V3ApolloWrapper'
 
-import "@reach/dialog/styles.css"
-import "@reach/menu-button/styles.css"
+import 'react-toastify/dist/ReactToastify.css'
+import '@reach/dialog/styles.css'
+import '@reach/menu-button/styles.css'
 import '@reach/tooltip/styles.css'
 
 import 'assets/styles/utils.css'
@@ -20,6 +22,8 @@ import 'assets/styles/tables.css'
 import 'assets/styles/pool.css'
 import 'assets/styles/animations.css'
 import 'assets/styles/transitions.css'
+
+import 'assets/styles/pool-toast.css'
 
 import 'assets/styles/reach--custom.css'
 import 'assets/styles/vx--custom.css'
@@ -102,6 +106,12 @@ function MyApp({ Component, pageProps, router }) {
         </Layout>
       </AllContextProviders>
     </V3ApolloWrapper>
+
+    <ToastContainer
+      className='pool-toast'
+      position='top-center'
+      autoClose={7000}
+    />
   </>
 }
 

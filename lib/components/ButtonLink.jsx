@@ -7,7 +7,7 @@ export const getButtonClasses = (props) => {
     border,
     bg,
     primary,
-    text,
+    height,
     hoverBg,
     hoverBorder,
     hoverText,
@@ -16,6 +16,7 @@ export const getButtonClasses = (props) => {
     rounded,
     secondary,
     selected,
+    text,
     transition,
     className,
     textSize,
@@ -33,7 +34,7 @@ export const getButtonClasses = (props) => {
   // eg. textSize='sm', textSize='xl'
   textSize = getTextSize(textSize)
 
-  let defaultPadding = 'px-4 xs:px-6 sm:px-10 lg:px-12 py-2 sm:py-2'
+  let defaultPadding = 'px-4 xs:px-6 sm:px-4 lg:px-12 py-2 sm:py-2'
   let defaultRounded = 'rounded-lg'
   let defaultTrans = 'trans trans-fast'
 
@@ -58,6 +59,7 @@ export const getButtonClasses = (props) => {
   padding = padding ? `${padding}` : defaultPadding
   rounded = rounded ? `rounded-${rounded}` : defaultRounded
   transition = transition ? `${transition}` : defaultTrans
+  height = height ? `${height}` : ''
   width = width ? `${width}` : ''
 
   border = border ? `border-${border}` : defaultBorder
@@ -75,6 +77,7 @@ export const getButtonClasses = (props) => {
     animClass,
     bg,
     border,
+    height,
     padding,
     rounded,
     text,
@@ -100,7 +103,7 @@ const getTextSize = (size) => {
     case '2xl':
       return `text-xl xs:text-2xl sm:text-3xl lg:text-4xl`
     default:
-      return `text-xxs xs:text-xs sm:text-sm lg:text-base`
+      return `text-sm sm:text-base lg:text-xl`
   }
 }
 
