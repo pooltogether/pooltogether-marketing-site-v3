@@ -1,61 +1,74 @@
 import React from 'react'
 
-import HowArt123Coins from 'assets/images/security-art-locks@2x.png'
+import { ButtonLink } from 'lib/components/ButtonLink'
+
+import SecurityLocksSvg from 'assets/images/security-art-locks@2x.png'
 
 export const IndexSecurity = () => {
+  const securityImg = <img
+    src={SecurityLocksSvg}
+    className='max-w-full'
+  />
+
   return <>
     <div
-      className='bg-darkened'
+      className='bg-secondary'
     >
-      <div className='pool-container mx-auto py-8 sm:pt-24'>
-        <div className='flex items-center justify-between'>
-          <h1
-            className='w-1/2 sm:w-1/3 leading-10 sm:leading-tight'
+      <div
+        className='pool-container mx-auto py-8 sm:pt-24'
+      >
+        <div
+          className='flex items-center justify-between'
+        >
+          <div
+            className='flex flex-col sm:w-2/3'
           >
-            <span
-              className='text-flashy'
-              style={{ display: 'block' }}
-            >How</span> <div className=' -mt-3 block'>it works</div>
-          </h1>
+            <h1
+              className='leading-10 sm:leading-tight'
+            >
+              <span
+                className='text-flashy'
+                style={{ display: 'block' }}
+              >
+                Security
+              </span> <div className='-mt-3 block'>
+                &amp; risks
+              </div>
+            </h1>
 
-          <div className='w-16 sm:w-32'>
-            <img
-              src={CoinsSvg}
-              className='max-w-full'
-            />
+            <div
+              className='w-1/2 xs:w-1/3 sm:hidden mt-6'
+            >
+              {securityImg}
+            </div>
+
+            <p
+              className='font-number text-xs sm:text-lg pr-12 py-6 sm:pb-12'
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <div
+              className='sm:w-1/2'
+            >
+              <ButtonLink
+                href='https://docs.pooltogether.com/security/risks'
+                as='https://docs.pooltogether.com/security/risks'
+                className='mb-12'
+              >
+                Learn about Risk
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div
+            className='hidden sm:block w-1/2 sm:-mt-10'
+          >
+            {securityImg}
           </div>
         </div>
       </div>
 
-      <div
-        className='bg-how-art-waves pb-40 px-4 sm:px-0'
-        style={{
-          minHeight: 200
-        }}
-      >
-        <HowItWorksBox
-          id='1'
-          title='Get tickets'
-          description='Deposit into any prize pool and instantly get tickets. Receive 1 ticket for every $1 deposited.'
-        />
-
-        <HowItWorksBox
-          id='2'
-          title='Win prizes'
-          description={`As long as your money is deposited you're eligible to win prizes. Prizes are made up of the interest earned on all deposited money in the pool`}
-        />
-
-        <HowItWorksBox
-          id='3'
-          title='Never lose'
-          description='Remove your deposit at anytime. As long as you stay in the pools you continue to be eligible to win.'
-        />
-
-        <img
-          src={HowArt123Coins}
-          className='mx-auto how-art-123-coins trans hidden sm:block'
-        />
-      </div>
     </div>
   </>
 }
