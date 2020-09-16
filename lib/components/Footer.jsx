@@ -19,6 +19,32 @@ export const Footer = () => {
   const linkListItemClassNames = 'my-2'
   const linkClassNames = 'trans trans-fast text-accent-1 no-underline'
   // mt-1 sm:mt-3
+
+  const FooterLink = (props) => <>
+    <li
+      className={linkListItemClassNames}
+    >
+      <Link
+        href={props.href}
+        as={props.href}
+      >
+        <a
+          className={classnames(
+            linkClassNames,
+            { 
+              flex: props.iconSrc
+            }
+          )}
+        >
+          {props.iconSrc && <img
+            alt={`${props.children} icon/logo`}
+            src={props.iconSrc}
+            className='mr-4 w-4'
+          />} {props.children}
+        </a>
+      </Link>
+    </li>
+  </>
   
   return <>
     <footer
@@ -63,20 +89,26 @@ export const Footer = () => {
                       Protocol
                     </span>
                     <ul>
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href='https://docs.pooltogether.com'
                       >
-                        <Link
-                          href='/audits'
-                          as='/audits'
-                        >
-                          <a
-                            className={linkClassNames}
-                          >
-                            Security
-                          </a>
-                        </Link>
-                      </li>
+                        Documentation
+                      </FooterLink>
+                      <FooterLink
+                        href='/how-it-works'
+                      >
+                        How it works
+                      </FooterLink>
+                      <FooterLink
+                        href='/audits'
+                      >
+                        Security
+                      </FooterLink>
+                      <FooterLink
+                        href='/faq'
+                      >
+                        FAQ
+                      </FooterLink>
                     </ul>
                   </div>
 
@@ -91,50 +123,26 @@ export const Footer = () => {
                     </span>
 
                     <ul>
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href='https://medium.com/pooltogether'
                       >
-                        <Link
-                          href='/'
-                          as='/#learn'
-                        >
-                          <a
-                            className={linkClassNames}
-                          >
-                            Learn
-                          </a>
-                        </Link>
-                      </li>
-                      
-                      <li
-                        className={linkListItemClassNames}
+                        Blog
+                      </FooterLink>
+                      <FooterLink
+                        href='/careers'
                       >
-                        <Link
-                          href='/faq'
-                          as='/faq'
-                        >
-                          <a
-                            className={linkClassNames}
-                          >
-                            FAQ
-                          </a>
-                        </Link>
-                      </li>
-
-                      <li
-                        className={linkListItemClassNames}
+                        Careers
+                      </FooterLink>
+                      <FooterLink
+                        href='https://v2.pooltogether.com'
                       >
-                        <Link
-                          href='/'
-                          as='/#stats'
-                        >
-                          <a
-                            className={linkClassNames}
-                          >
-                            Stats
-                          </a>
-                        </Link>
-                      </li>
+                        v2.0.0
+                      </FooterLink>
+                      <FooterLink
+                        href='https://v1.pooltogether.com'
+                      >
+                        v1.0.0
+                      </FooterLink>
                     </ul>
                   </div>
 
@@ -152,99 +160,46 @@ export const Footer = () => {
                     </span>
 
                     <ul>
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href='https://twitter.com/PoolTogether_'
+                        iconSrc={TwitterLogo}
                       >
-                        <a
-                          className={classnames(
-                            linkClassNames,
-                            'flex'
-                          )}
-                          href='https://twitter.com/PoolTogether_'
-                        >
-                          <img
-                            alt='twitter logo'
-                            src={TwitterLogo}
-                            className='mr-4 w-4'
-                          /> Twitter
-                        </a>
-                      </li>
+                        Twitter
+                      </FooterLink>
+                      
+                      <FooterLink
+                        href='https://discord.gg/hxPhPDW'
+                        iconSrc={DiscordLogo}
+                      >
+                        Discord
+                      </FooterLink>
 
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href='https://github.com/pooltogether'
+                        iconSrc={GithubLogo}
                       >
-                        <a
-                          className={classnames(
-                            linkClassNames,
-                            'flex'
-                          )}
-                          href='https://discord.gg/hxPhPDW'
-                        >
-                          <img
-                            alt='discord logo'
-                            src={DiscordLogo}
-                            className='mr-4 w-4'
-                          /> Discord
-                        </a>
-                      </li>
+                        Github
+                      </FooterLink>
 
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href='https://medium.com/pooltogether'
+                        iconSrc={MediumLogo}
                       >
-                        <a
-                          className={classnames(
-                            linkClassNames,
-                            'flex'
-                          )}
-                          href='https://github.com/pooltogether'
-                        >
-                          <img
-                            alt='github logo'
-                            src={GithubLogo}
-                            className='mr-4 w-4'
-                          /> Github
-                        </a>
-                      </li>
+                        Medium
+                      </FooterLink>
+                          
 
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href=''
                       >
-                        <a
-                          className={classnames(
-                            linkClassNames,
-                            'flex'
-                          )}
-                          href='https://medium.com/pooltogether'
-                        >
-                          <img
-                            alt='medium logo'
-                            src={MediumLogo}
-                            className='mr-4 w-4'
-                          /> Medium
-                        </a>
-                      </li>
+                        Advocates
+                      </FooterLink>
 
-                      <li
-                        className={linkListItemClassNames}
+                      <FooterLink
+                        href=''
                       >
-                        <a
-                          className={linkClassNames}
-                          href=''
-                        >
-                          Advocates
-                        </a>
-                      </li>
-
-                      <li
-                        className={linkListItemClassNames}
-                      >
-                        <a
-                          className={linkClassNames}
-                          href=''
-                        >
-                          Invite friends
-                        </a>
-                      </li>
+                        Invite friends
+                      </FooterLink>
                     </ul>
 
                   </div>
