@@ -22,8 +22,6 @@ export const GridItem = (props) => {
     imgStyle,
   } = props
 
-  console.log(imgStyle);
-
   return <>
     <motion.a
       href={url}
