@@ -26,6 +26,9 @@ export const IndexHero = (
   const startVideo = (e) => {
     e.preventDefault()
     setPlayVideo(true)
+    setTimeout(() => {
+      setPlayVideo(false)
+    }, 500)
   }
 
   return <>
@@ -111,26 +114,22 @@ export const IndexHero = (
                 play={playVideo}
               />
 
-              {!playVideo && <>
+              <div
+                className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
+              >
                 <div
-                  className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
-                >
-                  <div
-                    className='bg-vid-tri'
-                  />
-                </div>
-              </>}
+                  className='bg-vid-tri'
+                />
+              </div>
             </button>
             
 
-            {!playVideo && <>
-              <button
-                onClick={startVideo}
-                className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
-              >
-                Watch how it works!
-              </button>
-            </>}
+            <button
+              onClick={startVideo}
+              className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
+            >
+              Watch how it works!
+            </button>
           </div>
         </div>
       </div>

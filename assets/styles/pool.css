@@ -98,20 +98,11 @@ p {
   }
 }
 
-#wistia-pvj32sxfho-1_popover_container {
-  display: none;
-}
-
-.wistia_popover_mode #wistia-pvj32sxfho-1_popover_container {
-  display: block;
-}
-
 .wistia_popover_mode {
   overflow: hidden;
 }
 
 .wistia_popover_overlay {
-  height: 100vh !important;
   outline: 0 !important;
 }
 
@@ -123,34 +114,7 @@ p {
   right: 0 !important;
   margin-left: auto !important;
   margin-right: auto !important;
-}
-
-.wistia_popover_embed,
-.wistia_popover_embed > div,
-.wistia_popover_embed > div > div,
-.wistia_popover_embed #wistia_grid_42_main {
   outline: 0 !important;
-  height: 50vh !important;
-}
-
-@screen sm {
-  .wistia_popover_embed,
-  .wistia_popover_embed > div,
-  .wistia_popover_embed > div > div,
-  .wistia_popover_embed #wistia_grid_42_main {
-    outline: 0 !important;
-    height: 50vh !important;
-  }
-}
-
-@screen lg {
-  .wistia_popover_embed,
-  .wistia_popover_embed > div,
-  .wistia_popover_embed > div > div,
-  .wistia_popover_embed #wistia_grid_42_main {
-    outline: 0 !important;
-    height: 80vh !important;
-  }
 }
 
 .w-video-wrapper {
@@ -160,14 +124,6 @@ p {
 .wistia_placebo_close_button {
   display: none;
 }
-
-@screen xs {
-  .wistia_popover_embed {
-    bottom: 20vh !important;
-    top: 10vh !important;
-  }
-}
-
 
 input:-internal-autofill-previewed,
 input:-internal-autofill-selected,
@@ -419,6 +375,7 @@ input[type='submit'][disabled] {
 }
 
 .hamburger-button {
+  @apply shadow-4xl;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -430,11 +387,11 @@ input[type='submit'][disabled] {
   cursor: pointer;
   position: absolute;
   bottom: 33px;
-  right: 36px;
+  right: 20px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: transparent;
+  /* background: transparent; */
   z-index: 50;
 }
 

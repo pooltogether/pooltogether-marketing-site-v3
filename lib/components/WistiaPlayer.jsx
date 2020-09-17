@@ -1,78 +1,74 @@
-import React, { useEffect } from 'react'
-import classnames from 'classnames'
+import React, { useEffect, useState } from 'react'
 
 const VIDEO_ID = 'pvj32sxfho'
 
 export const WistiaPlayer = (props) => {
+  const [playerLoader, setPlayerLoader] = useState()
+
+{/* <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_embed wistia_async_g5pnf59ala" style="height:360px;position:relative;width:640px">
+  <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+    <img src="https://fast.wistia.com/embed/medias/g5pnf59ala/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+  </div>
+</div> */}
 
   useEffect(() => {
     const script1 = document.createElement('script')
-    const script2 = document.createElement('script')
-
-    script1.src = `//fast.wistia.com/embed/medias/${VIDEO_ID}.jsonp`
+    script1.src = `//fast.wistia.com/assets/external/E-v1.js`
     script1.async = true
-
-    script2.src = `//fast.wistia.com/assets/external/E-v1.js`
-    script2.async = true
-
     document.body.appendChild(script1)
-    document.body.appendChild(script2)
   }, [])
 
   useEffect(() => {
-    if (props.play) {
-      const _wq = window._wq || []
+    if (window && window.Wistia && props.play) {
+      const videoPlayer = document.getElementById('video-player')
+      
+      function makeEmbedPop(elem) {
+        elem.setAttribute('class', 'wistia_embed wistia_async_' + VIDEO_ID + ' popover=true popoverContent=link')
+        Wistia.embeds.setup()
 
-      console.log(window._wq)
-      console.log('pushing')
-      _wq.push({
-        id: VIDEO_ID,
-        options: {
-          autoPlay: true
-        },
-        onReady: function (video) {
+        var popoverAction = {}
+
+        popoverAction[VIDEO_ID] = function (video) {
+          video.popover.show()
           video.play()
         }
-      })
+
+        window._wq = window._wq || []
+        _wq.push(popoverAction)
+      }
+
+      
+      makeEmbedPop(videoPlayer)
 
       setTimeout(() => {
+        const video = Wistia.api('video-player')
+        if (video) {
+          console.log('should start video again')
+          // video.bind("timechange", function (t) {
+          //   console.log("the time changed to " + t);
+          // });
 
-        document.body.classList.add('wistia_popover_mode')
-      }, 500)
+          videoPlayer.addEventListener('click', () => {
+            makeEmbedPop(videoPlayer)
+            // video.play()
+          })
+        }
+
+        const overlay = document.getElementById('video-player_popover_overlay')
+        if (overlay) {
+          overlay.addEventListener('click', () => {
+            if (video) {
+              videoPlayer.setAttribute('class', '')
+              video.remove()
+            }
+          })
+        }
+      }, 300)
 
 
     }
   }, [props.play])
 
-  if (!props.play) {
-    return null
-  } else {
-    return <span
-      className={`inline-block w-full h-full relative wistia_embed wistia_async_${VIDEO_ID} autoPlay=true popover=true popoverAnimateThumbnail=true videoFoam=true`}
-    >
-      &nbsp;
-      </span>
-    // return <div
-    //   className={classnames(
-    //     'wistia_responsive_wrapper w-full h-full trans',
-    //   )}
-    // >
-    //   <span
-    //     className={`inline-block w-full h-full relative wistia_embed wistia_async_${VIDEO_ID} autoPlay=true popover=true popoverAnimateThumbnail=true videoFoam=true`}
-    //   >
-    //     &nbsp;
-    //   </span>
-    // </div>
-    // return <div
-    //   className={classnames(
-    //     'wistia_responsive_wrapper w-full h-full trans',
-    //   )}
-    // >
-    //   <span
-    //     className={`inline-block w-full h-full relative wistia_embed wistia_async_${VIDEO_ID} autoPlay=true popover=true popoverAnimateThumbnail=true videoFoam=true`}
-    //   >
-    //     &nbsp;
-    //   </span>
-    // </div>
-  }
+  return <div id='video-player' />
 }

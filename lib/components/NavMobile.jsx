@@ -35,6 +35,8 @@ export const NavMobile = (props) => {
   const containerRef = useRef(null)
   const { height } = useDimensions(containerRef)
 
+  console.log({ isOpen})
+
   return (
     <motion.nav
       initial={false}
@@ -42,16 +44,18 @@ export const NavMobile = (props) => {
       custom={height}
       ref={containerRef}
       className={classnames(
-        'flex items-center justify-center sm:hidden nav-mobile',
+        'flex items-center justify-center sm:hidden z-40 fixed h-full w-full',
+        {
+          'pointer-events-none': !isOpen
+        }
       )}
+      style={{ 
+        right: 0,
+        bottom: 0,
+      }}
     >
       <motion.div className='background' variants={sidebar} />
       <NavMobileList
-        className={classnames(
-          {
-            'pointer-events-none': !isOpen
-          }
-        )}
       />
       <NavMobileMenuToggle toggle={() => toggleOpen()} />
     </motion.nav>

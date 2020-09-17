@@ -63,6 +63,7 @@
     "react-intersection-observer": "^8.28.5",
     "react-toastify": "^6.0.8",
     "tailwindcss": "^1.8.6",
-    "use-window-focus": "^1.1.1"
+    "use-window-focus": "^1.1.1",
+    "wistia-player-api-loader": "^1.0.0"
   }
 }
