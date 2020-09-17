@@ -98,8 +98,10 @@ export const IndexGetInvolved = () => {
                 flexWrapperClasses=''
                 listId={process.env.NEXT_JS_MAILCHIMP_LIST_GENERAL_ID}
                 successMessage={<>
-                  Nice.
-                  <br /> You'll be getting all the good PoolTogether news!
+                  <div className='text-green font-bold font-number'>
+                    Nice.
+                    <br />You'll be getting all the good PoolTogether news!
+                  </div>
                 </>}
               />
             </div>

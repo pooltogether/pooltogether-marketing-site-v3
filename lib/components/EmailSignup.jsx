@@ -68,13 +68,13 @@ export const EmailSignup = withEmailSignup(class _EmailSignup extends Component 
             }
           )
           }>
-          <p className={`${successTextClass} text-sm lg:text-lg my-2 text-center m-auto`}>
+          <div className={`${successTextClass} text-sm lg:text-lg my-2 text-center m-auto`}>
             <FeatherIcon
               icon='send'
-              className='m-auto mb-2'
+              className='m-auto mb-2 text-green fill-green w-8 h-8'
             />
             {successMessage}
-          </p>
+          </div>
         </div>
       </div>
     </>

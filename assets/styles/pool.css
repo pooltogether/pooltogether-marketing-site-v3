@@ -13,6 +13,10 @@
   color: rgba(108, 49, 245, 0.4);
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(108, 49, 245, 0.4);
+}
+
 /* * {
   --flashyGradient: linear-gradient(
     40deg,
@@ -52,6 +56,77 @@ body {
 html, body, table {
   scroll-behavior: smooth;
 }
+
+#wistia-pvj32sxfho-1_popover_container {
+  display: none;
+}
+
+.wistia_popover_mode #wistia-pvj32sxfho-1_popover_container {
+  display: block;
+}
+
+.wistia_popover_mode {
+  overflow: hidden;
+}
+
+.wistia_popover_overlay {
+  height: 100vh !important;
+  outline: 0 !important;
+}
+
+.wistia_popover_embed {
+  border-image-width: none !important;
+  top: 10vh !important;
+  box-shadow: none !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.wistia_popover_embed,
+.wistia_popover_embed > div,
+.wistia_popover_embed > div > div,
+.wistia_popover_embed #wistia_grid_42_main {
+  outline: 0 !important;
+  height: 50vh !important;
+}
+
+@screen sm {
+  .wistia_popover_embed,
+  .wistia_popover_embed > div,
+  .wistia_popover_embed > div > div,
+  .wistia_popover_embed #wistia_grid_42_main {
+    outline: 0 !important;
+    height: 50vh !important;
+  }
+}
+
+@screen lg {
+  .wistia_popover_embed,
+  .wistia_popover_embed > div,
+  .wistia_popover_embed > div > div,
+  .wistia_popover_embed #wistia_grid_42_main {
+    outline: 0 !important;
+    height: 80vh !important;
+  }
+}
+
+.w-video-wrapper {
+  background: #200546 !important;
+}
+
+.wistia_placebo_close_button {
+  display: none;
+}
+
+@screen xs {
+  .wistia_popover_embed {
+    bottom: 20vh !important;
+    top: 10vh !important;
+  }
+}
+
 
 input:-internal-autofill-previewed,
 input:-internal-autofill-selected,
@@ -555,7 +630,7 @@ li.nav-mobile-listitem {
 
 @screen xs {
   .interactable-chip {
-    min-height: 50px;
+    min-height: 70px;
     min-width: 100px;
   }
 }
