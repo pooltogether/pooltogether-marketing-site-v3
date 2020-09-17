@@ -648,3 +648,15 @@ li.nav-mobile-listitem {
     min-width: 180px;
   }
 }
+
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 100ms ease-out;
+  max-height: 0;
+}
+
+.collapsible-content--active {
+  max-height: 1000px;
+  transition: max-height 500ms ease-in;
+  height: auto;
+}
