@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Meta } from 'lib/components/Meta'
 
 export const PageContainer = (props) => {
-  const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+  const transition = { duration: 0.2, ease: [0.43, 0.13, 0.23, 0.96] }
 
   const variants = {
     initial: { /*y: -10,*/ opacity: 0 },
@@ -12,7 +12,7 @@ export const PageContainer = (props) => {
     exit: {
       // y: 10,
       opacity: 0,
-      transition: { duration: 0.5, ...transition },
+      transition: { duration: 0.2, ...transition },
     },
   }
 

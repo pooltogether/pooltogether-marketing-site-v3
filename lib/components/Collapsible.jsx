@@ -30,7 +30,7 @@ export const Collapsible = class _Collapsible extends Component {
           <button
             {...buttonProps}
             className={classnames(
-              'inline-block text-left text-sm sm:text-base md:text-lg lg:text-xl pb-0 w-4/5 hover:text-purple-500 trans active:outline-none focus:outline-none', {
+              'inline-block text-left text-sm sm:text-base md:text-lg lg:text-xl pb-0 w-4/5  trans active:outline-none focus:outline-none', {
               'text-white opacity-30': this.state.active,
               'text-highlight-2': !this.state.active,
             }
@@ -42,7 +42,7 @@ export const Collapsible = class _Collapsible extends Component {
           <button
             {...buttonProps}
             className={classnames(
-              'inline-block text-right text-sm sm:text-base md:text-lg lg:text-xl mt-3 pb-0 w-1/5 hover:text-purple-500 trans active:outline-none focus:outline-none',
+              'inline-block text-right text-sm sm:text-base md:text-lg lg:text-xl mt-3 pb-0 w-1/5 hover:text-purple trans active:outline-none focus:outline-none',
               {
                 'text-purple': this.state.active,
                 'text-purple': !this.state.active,

@@ -123,12 +123,14 @@ export const IndexHero = (
             </button>
             
 
-            <button
-              onClick={startVideo}
-              className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
-            >
-              Watch how it works!
-            </button>
+            {!playVideo && <>
+              <button
+                onClick={startVideo}
+                className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
+              >
+                Watch how it works!
+              </button>
+            </>}
           </div>
         </div>
       </div>

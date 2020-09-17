@@ -42,7 +42,6 @@ function MyApp({ Component, pageProps, router }) {
     const handleExitComplete = () => {
       console.log(window)
       if (typeof window !== 'undefined') {
-        console.log('scroll!')
         window.scrollTo({ top: 0 })
       }
     }

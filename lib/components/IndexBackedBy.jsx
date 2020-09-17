@@ -9,6 +9,7 @@ import ConsensysSvg from 'assets/images/consensys.svg'
 import DTCCapitalSvg from 'assets/images/dtc-capital.svg'
 import IdeoSvg from 'assets/images/ideo.svg'
 import ParaFiSvg from 'assets/images/parafi-logo.svg'
+import MetaCartelSvg from 'assets/images/metacartel-logo.svg'
 
 export const IndexBackedBy = () => {
   const controls = useAnimation()
@@ -81,6 +82,12 @@ export const IndexBackedBy = () => {
           title={'ParaFi'}
           img={ParaFiSvg}
           url='https://www.parafi.capital/'
+        />
+
+        <GridItemBackedBy
+          title={'MetaCartel Ventures'}
+          img={MetaCartelSvg}
+          url='https://metacartel.org'
         />
 
       </motion.div>

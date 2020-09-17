@@ -94,11 +94,11 @@ export const Footer = () => {
                       >
                         Documentation
                       </FooterLink>
-                      <FooterLink
+                      {/* <FooterLink
                         href='/how-it-works'
                       >
                         How it works
-                      </FooterLink>
+                      </FooterLink> */}
                       <FooterLink
                         href='/audits'
                       >
@@ -108,6 +108,11 @@ export const Footer = () => {
                         href='/faq'
                       >
                         FAQ
+                      </FooterLink>
+                      <FooterLink
+                        href='/brand-assets'
+                      >
+                        Brand assets
                       </FooterLink>
                     </ul>
                   </div>
@@ -188,7 +193,7 @@ export const Footer = () => {
                         Medium
                       </FooterLink>
                           
-
+{/* 
                       <FooterLink
                         href=''
                       >
@@ -199,7 +204,7 @@ export const Footer = () => {
                         href=''
                       >
                         Invite friends
-                      </FooterLink>
+                      </FooterLink> */}
                     </ul>
 
                   </div>
@@ -257,7 +262,7 @@ export const Footer = () => {
                   'mt-2 sm:mt-4',
                   linkClassNames,
                 )}
-                href=''
+                href='/privacy'
               >
                 Privacy
               </a>
@@ -266,7 +271,7 @@ export const Footer = () => {
                   'mt-2 sm:mt-4',
                   linkClassNames,
                 )}
-                href=''
+                href='/terms'
               >
                 Terms
               </a>
@@ -275,7 +280,7 @@ export const Footer = () => {
                   'mt-2 sm:mt-4',
                   linkClassNames,
                 )}
-                href=''
+                href='/sitemap.xml'
               >
                 Sitemap
               </a>

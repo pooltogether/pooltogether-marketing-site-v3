@@ -41,7 +41,7 @@ export const FaqPage = class _FaqPage extends Component {
         >
           We’ve worked hard to ensure the security of PoolTogether. Our code has been independently audited by OpenZeppelin and Quantstamp. We also have a bug bounty program. You can see our audits and read more about <a href='https://compound.finance'>our bug bounty program here</a>.
 
-          However, as with all early-stage products there are risks associated with using PoolTogether and users assume the full responsibility for these risks. <strong>You should not deposit any money you are not comfortable losing.</strong> You can <a href='https://www.pooltogether.com/terms'>review our terms of service here</a>.
+          However, as with all early-stage products there are risks associated with using PoolTogether and users assume the full responsibility for these risks. <strong>You should not deposit any money you are not comfortable losing.</strong> You can <a href='/terms'>review our terms of service here</a>.
 
           You can also review details on the <a href='https://medium.com/pooltogether/a-simple-explanation-of-risks-using-pooltogether-fdf6fecd3864'>different types of risks involved in using PoolTogether here</a>.
         </Collapsible>
@@ -122,7 +122,7 @@ export const FaqPage = class _FaqPage extends Component {
         <h3 className='mt-10'>
           I have more questions ...
         </h3>
-        <p className='pb-4 text-purple-800 mt-1'>
+        <p className='pb-4  mt-1'>
           Feel free to reach out to us on Twitter <a
             target='_blank'
             rel='noreferrer nofollow'
@@ -141,7 +141,7 @@ export const FaqPage = class _FaqPage extends Component {
         {/* <h3>
           I'd like to be notified when draws happen.
         </h3>
-        <p className='pb-4 text-purple-800 mt-1'>
+        <p className='pb-4 text-purple mt-1'>
           You can&nbsp;
           <a
             className='trans trans-fast cursor-pointer'
@@ -159,7 +159,7 @@ export const FaqPage = class _FaqPage extends Component {
         <h3>
           I'm ready to join the pool. 🏊
         </h3>
-        <p className='pb-4 text-purple-800 mt-1'>
+        <p className='pb-4  mt-1'>
           Great, <a
             href='https://app.pooltogether.com'
           >

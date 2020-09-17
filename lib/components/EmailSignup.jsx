@@ -12,7 +12,6 @@ export const EmailSignup = withEmailSignup(class _EmailSignup extends Component 
       flexWrapperClasses,
       successMessage,
       successTextClass,
-      textColorClass,
     } = this.props
 
     successMessage = successMessage || <>
@@ -20,7 +19,6 @@ export const EmailSignup = withEmailSignup(class _EmailSignup extends Component 
       <br /> You will receive a weekly update when prizes are drawn!
     </>
     successTextClass = successTextClass || `text-black`
-    textColorClass = textColorClass || 'text-purple-700'
 
     const list = this.props.listId
 

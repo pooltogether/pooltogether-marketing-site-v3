@@ -13,8 +13,8 @@
   color: rgba(108, 49, 245, 0.4);
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(108, 49, 245, 0.4);
+:focus {
+  outline: rgba(147, 106, 241, 1) dashed 1px;
 }
 
 /* * {
@@ -45,16 +45,57 @@
 
 html {
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
+  overflow-x: hidden;
 }
 
 body {
   height: 100%;
-  overflow-x: hidden;
 }
 
 html, body, table {
   scroll-behavior: smooth;
+}
+
+ul.pool-list {
+  @apply ml-4 mt-2 list-disc list-outside text-xxs sm:text-xs text-accent-1 font-number;
+}
+
+@screen sm {
+  ul.pool-list {
+    @apply ml-8;
+  }
+}
+
+@screen lg {
+  ul.pool-list {
+    @apply ml-0;
+  }
+}
+
+p {
+  @apply mb-2;
+}
+
+@screen xs {
+  .pool-container p,
+  .pool-container ul {
+    max-width: 80vw;
+  }
+}
+
+@screen sm {
+  .pool-container p,
+  .pool-container ul {
+    max-width: 50vw;
+  }
+}
+
+@screen lg {
+  .pool-container p,
+  .pool-container ul {
+    max-width: 45vw;
+  }
 }
 
 #wistia-pvj32sxfho-1_popover_container {
