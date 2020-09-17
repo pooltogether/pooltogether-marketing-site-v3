@@ -8,6 +8,7 @@ import { GridItemBackedBy } from 'lib/components/GridItemBackedBy'
 import ConsensysSvg from 'assets/images/consensys.svg'
 import DTCCapitalSvg from 'assets/images/dtc-capital.svg'
 import IdeoSvg from 'assets/images/ideo.svg'
+import ParaFiSvg from 'assets/images/parafi-logo.svg'
 
 export const IndexBackedBy = () => {
   const controls = useAnimation()
@@ -68,13 +69,18 @@ export const IndexBackedBy = () => {
           img={IdeoSvg}
           url='https://www.ideo.com'
           maxHeight={30}
-          small
         />
 
         <GridItemBackedBy
           title={'DTC Capital'}
           img={DTCCapitalSvg}
           url='https://www.dtc.capital'
+        />
+
+        <GridItemBackedBy
+          title={'ParaFi'}
+          img={ParaFiSvg}
+          url='https://www.parafi.capital/'
         />
 
       </motion.div>
