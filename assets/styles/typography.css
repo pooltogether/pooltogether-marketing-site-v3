@@ -65,7 +65,7 @@ h1 {
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-xl leading-tight;
 }
 
 @screen sm {

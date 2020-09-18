@@ -372,11 +372,12 @@ input[type='submit'][disabled] {
 
 
 
-.background {
+.mobile-nav-background {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
+  right: 0;
   width: 100vw;
   background: #190742;
   z-index: 40;
@@ -395,7 +396,7 @@ input[type='submit'][disabled] {
   cursor: pointer;
   position: absolute;
   bottom: 33px;
-  right: 20px;
+  left: calc(100vw - 85px);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -657,6 +658,10 @@ li.nav-mobile-listitem {
   }
 }
 
+.collapsible-target:hover * {
+  color: var(--color-text-white)
+}
+
 .collapsible-content {
   overflow: hidden;
   transition: max-height 100ms ease-out;
@@ -667,4 +672,12 @@ li.nav-mobile-listitem {
   max-height: 1000px;
   transition: max-height 500ms ease-in;
   height: auto;
+}
+
+.discord-button:hover path {
+  fill: var(--color-bg-blue-2);
+}
+
+.community-button:hover path {
+  stroke: var(--color-text-highlight-1);
 }

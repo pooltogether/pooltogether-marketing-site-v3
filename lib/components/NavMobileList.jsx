@@ -14,9 +14,9 @@ const variants = {
 
 const links = [
   {
-    label: 'Docs',
-    href: '/docs',
-    as: '/docs'
+    label: 'Developers',
+    href: '/developers',
+    as: '/developers'
   },
   {
     label: 'Community',
@@ -40,6 +40,7 @@ export const NavMobileList = (props) => (
   >
     {links.map((link, index) => (
       <NavMobileListItem
+        toggleOpen={props.toggleOpen}
         link={link}
         index={index}
         key={`nav-mobile-listitem-${index}`}

@@ -23,6 +23,9 @@ body {
   }
 }
 
+.min-height-container {
+  min-height: 600px;
+}
 
 .pool-container {
   max-width: 90vw;

@@ -38,7 +38,7 @@ export const IndexHero = (
         className='pt-12'
         style={{
           height: 'calc(40vh - 84px)',
-          minHeight: 230
+          minHeight: 290
         }}
       >
         <h1
@@ -89,7 +89,7 @@ export const IndexHero = (
           className='pool-container flex flex-col sm:flex-row pt-10 sm:mt-32 sm:pt-20 text-left mx-auto'
         >
           <div
-            className='mx-auto w-10/12 xs:w-9/12 sm:w-1/2 pt-8 sm:pt-12 text-center sm:text-left'
+            className='mx-auto w-10/12 xs:w-9/12 sm:w-1/2 pt-8 sm:pt-12 lg:px-12 lg:py-20 text-center sm:text-left'
           >
             <h2
               className='text-flashy'
@@ -97,7 +97,7 @@ export const IndexHero = (
               PoolTogether
             </h2>
 
-            <div className='font-number font-bold text-xs sm:text-lg sm:pr-20 pb-12 sm:pb-0'>
+            <div className='font-number font-bold text-xs sm:text-lg sm:pr-20 pb-2 sm:pb-0'>
               is a protocol for no-loss money games powered by Ethereum.
             </div>
           </div>

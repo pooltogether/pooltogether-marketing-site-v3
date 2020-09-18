@@ -40,7 +40,7 @@ export const Layout = (props) => {
     >
       <div
         className={classnames(
-          'header pool-container w-full bg-body z-30 mx-auto',
+          'header pool-container w-full z-30 mx-auto',
         )}
         style={{
           height: 84

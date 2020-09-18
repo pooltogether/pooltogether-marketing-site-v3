@@ -25,22 +25,17 @@ export const IndexBackedBy = () => {
 
   const containerVariants = {
     visible: {
-      // opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.12
       }
     },
     hidden: {
-      // opacity: 0,
     },
   }
 
   return <div
     id='backed-by'
     className='bg-darkened text-center py-24'
-    style={{ 
-      minHeight: 200
-    }}
   >
     <div
       className='pool-container mx-auto'

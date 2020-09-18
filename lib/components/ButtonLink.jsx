@@ -6,7 +6,7 @@ export const getButtonClasses = (props) => {
   let {
     border,
     bg,
-    primary,
+    blue,
     height,
     hoverBg,
     hoverBorder,
@@ -54,6 +54,14 @@ export const getButtonClasses = (props) => {
     defaultHoverBorder = 'hover:border-highlight-1'
     defaultHoverBg = 'hover:bg-body'
     defaultHoverText = 'hover:text-highlight-1'
+
+    if (blue) {
+      defaultBorder = 'border-blue border-2'
+      defaultText = 'text-blue'
+
+      defaultHoverBorder = 'hover:border-blue-2'
+      defaultHoverText = 'hover:text-blue-2'
+    }
   }
 
   padding = padding ? `${padding}` : defaultPadding
@@ -70,7 +78,6 @@ export const getButtonClasses = (props) => {
   hoverBg = hoverBg ? `hover:bg-${hoverBg}` : defaultHoverBg
   hoverText = hoverText ? `hover:text-${hoverText}` : defaultHoverText
 
-  
   return classnames(
     className,
     defaultClasses,

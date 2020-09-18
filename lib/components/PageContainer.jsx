@@ -17,7 +17,7 @@ export const PageContainer = (props) => {
   }
 
   const motionDivClassnames = 'sm:pt-20 xl:pt-24 trans'
-  const wrapperClassnames = 'pool-container container-min-height lg:w-3/4 mx-auto pb-10 sm:pb-8 lg:pb-20 leading-relaxed'
+  const wrapperClassnames = 'min-height-container mx-auto pb-10 sm:pb-8 lg:pb-20 leading-relaxed'
 
   return <>
     <motion.div

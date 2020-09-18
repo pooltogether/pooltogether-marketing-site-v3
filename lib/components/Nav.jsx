@@ -8,23 +8,39 @@ import { useTranslation } from 'lib/../i18n'
 export const Nav = (props) => {
   const { t } = useTranslation()
 
-  const navLinkClasses = 'text-accent-2 inline-flex items-center justify-center pr-12 capitalize leading-none rounded-full text-lg trans tracking-wider outline-none focus:outline-none active:outline-none font-bold'
+  const router = useRouter()
+
+  const developersPage = router.pathname.match('developers')
+  const communityPage = router.pathname.match('community')
+
+  // const navLinkClasses = 'text-accent-2 inline-flex items-center justify-center pr-12 capitalize leading-none rounded-full text-lg trans tracking-wider outline-none focus:outline-none active:outline-none font-bold'
+  const navLinkClasses = 'capitalize text-center leading-none rounded-full hover:bg-accent-grey-1 flex justify-start items-center text-lg lg:text-xl py-3 px-6 lg:px-8 trans tracking-wider outline-none focus:outline-none active:outline-none font-bold'
 
   return <>
     <nav
       className='justify-end items-center hidden sm:flex w-2/3'
     >
       <Link
-        href='/docs'
-        as='/docs'
+        href='/developers'
+        as='/developers'
         shallow
       >
+        {/* <div
+          className='flex items-center justify-center'
+          style={{ width: 28 }}
+        >
+        </div> */}
         <a
           className={classnames(
+            'mr-3',
             navLinkClasses,
+            {
+              'text-accent-2 hover:text-highlight-2': !developersPage,
+              'text-highlight-2 hover:text-highlight-2 bg-accent-grey-1': developersPage
+            }
           )}
         >
-          {t('docs')}
+          {t('developers')}
         </a>
       </Link>
 
@@ -36,6 +52,11 @@ export const Nav = (props) => {
         <a
           className={classnames(
             navLinkClasses,
+            'mr-6',
+            {
+              'text-accent-2 hover:text-highlight-2': !communityPage,
+              'text-highlight-2 hover:text-highlight-2 bg-accent-grey-1': communityPage
+            }
           )}
         >
           {t('community')}

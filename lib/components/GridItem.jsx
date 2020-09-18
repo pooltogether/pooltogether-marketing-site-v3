@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 const itemVariants = {
   hidden: {
     opacity: 0,
-    x: 150,
+    scale: 0,
   },
   visible: {
     opacity: 1,
-    x: 0,
+    scale: 1,
   }
 }
 

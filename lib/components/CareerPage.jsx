@@ -20,92 +20,97 @@ export const CareerPage = class _CareerPage extends Component {
     } = this.props
 
     return <>
-      <h4
-        className='mb-6'
+      <div
+        className='pool-container mx-auto flex flex-col text-base h-full z-10 relative'
       >
-        <Link
-          as='/careers'
-          href='/careers'
-          shallow
+
+        <h4
+          className='mb-6'
         >
-          <a
-            className='no-underline'
+          <Link
+            as='/careers'
+            href='/careers'
+            shallow
           >
-            Careers
-          </a>
-        </Link>
-      </h4>
+            <a
+              className='no-underline'
+            >
+              Careers
+            </a>
+          </Link>
+        </h4>
 
-      <div>
-        <h3
-          className='text-blue leading-snug'
-        >
-          {title}
-        </h3>
+        <div>
+          <h3
+            className='text-blue leading-snug'
+          >
+            {title}
+          </h3>
 
-        <h5
-          className='mb-0 -mt-1'
-        >
-          {positionType} position
-        </h5>
-        <h6
-          className='mb-8 -mt-1 text-sm text-accent-1'
-        >
-          Vancouver, New York, or remote
-        </h6>
-      </div>
+          <h5
+            className='mb-0 -mt-1'
+          >
+            {positionType} position
+          </h5>
+          <h6
+            className='mb-8 -mt-1 text-sm text-accent-1'
+          >
+            Vancouver, New York, or remote
+          </h6>
+        </div>
 
-      <p>
-        {description}
-      </p>
+        <p>
+          {description}
+        </p>
 
-      <div
-        className='mt-10 mb-2'
-      >
-        <div><strong>{p1Heading}</strong></div>
         <div
-          className='mb-2 leading-normal'
-        >{p1Subheading}</div>
-      </div>
-      <ul
-        className='pool-list'
-        dangerouslySetInnerHTML={{
-          __html: p1
-        }}
-      />
-
-      <div className='mt-8'>
-        <div><strong>{p2Heading}</strong></div>
-        <div
-          className='mb-2 leading-normal'
-        >{p2Subheading}</div>
-      </div>
-
-      <ul
-        className='pool-list'
-        dangerouslySetInnerHTML={{
-          __html: p2
-        }}
-      />
-
-      <div
-        className='mt-10'
-      >
-        <ButtonLink
-          as={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
-          href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
+          className='mt-10 mb-2'
         >
-          Apply now
-        </ButtonLink>
-      </div>
+          <div><strong>{p1Heading}</strong></div>
+          <div
+            className='mb-2 leading-normal'
+          >{p1Subheading}</div>
+        </div>
+        <ul
+          className='pool-list'
+          dangerouslySetInnerHTML={{
+            __html: p1
+          }}
+        />
 
-      <p
-        className='mt-8'
-      >
-        If you're interested in a position, apply to <a
-          href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
-        >careers@pooltogether.us</a> with your resume, Github profile, Dribbble portfolio, or any other relevant information.
-      </p>
+        <div className='mt-8'>
+          <div><strong>{p2Heading}</strong></div>
+          <div
+            className='mb-2 leading-normal'
+          >{p2Subheading}</div>
+        </div>
+
+        <ul
+          className='pool-list'
+          dangerouslySetInnerHTML={{
+            __html: p2
+          }}
+        />
+
+        <div
+          className='mt-10'
+        >
+          <ButtonLink
+            as={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
+            href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
+          >
+            Apply now
+          </ButtonLink>
+        </div>
+
+        <p
+          className='mt-8'
+        >
+          If you're interested in a position, apply to <a
+            href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
+          >careers@pooltogether.us</a> with your resume, Github profile, Dribbble portfolio, or any other relevant information.
+        </p>
+      </div>
     </>
   }
 

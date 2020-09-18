@@ -25,35 +25,36 @@ export const Collapsible = class _Collapsible extends Component {
         )}
       >
         <div
-          className='flex'
+          {...buttonProps}
+          className={classnames(
+            'flex cursor-pointer collapsible-target -mx-16 px-16 sm:-mx-10 sm:px-10 hover:bg-accent-grey-1 rounded-full pt-1',
+            {
+              'bg-accent-grey-1 text-white': this.state.active,
+              'text-highlight-2': !this.state.active,
+            }
+          )}
         >
-          <button
-            {...buttonProps}
+          <span
             className={classnames(
               'inline-block text-left text-sm sm:text-base md:text-lg lg:text-xl pb-0 w-4/5  trans active:outline-none focus:outline-none', {
-              'text-white opacity-30': this.state.active,
+              'text-white': this.state.active,
               'text-highlight-2': !this.state.active,
             }
             )}
           >
             {this.props.title}
-          </button>
+          </span>
 
-          <button
-            {...buttonProps}
+          <span
             className={classnames(
-              'inline-block text-right text-sm sm:text-base md:text-lg lg:text-xl mt-3 pb-0 w-1/5 hover:text-purple trans active:outline-none focus:outline-none',
-              {
-                'text-purple': this.state.active,
-                'text-purple': !this.state.active,
-              }
+              'inline-block text-right text-sm sm:text-base md:text-lg lg:text-xl pt-1 w-1/5 hover:text-purple trans active:outline-none focus:outline-none'
             )}
           >
             <span
               className={classnames(
                 'inline-block ml-auto rounded trans',
                 {
-                  'shadow-xl text-white': this.state.active,
+                  'text-white': this.state.active,
                   '': !this.state.active
                 }
               )}
@@ -69,7 +70,7 @@ export const Collapsible = class _Collapsible extends Component {
                 )}
               />
             </span>
-          </button>
+          </span>
 
         </div>
 
@@ -79,7 +80,7 @@ export const Collapsible = class _Collapsible extends Component {
           // }}
           className={classnames(
             'text-xs sm:text-sm md:text-base',
-            'mb-4',
+            'my-4',
             'collapsible-content',
             {
               'collapsible-content--active': this.state.active

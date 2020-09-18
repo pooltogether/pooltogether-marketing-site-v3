@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const itemVariants = {
   hidden: {
     opacity: 0,
-    x: 150,
+    x: -150,
   },
   visible: {
     opacity: 1,
@@ -30,7 +30,7 @@ export const GridItemBackedBy = (props) => {
       target='_blank'
       title={`Open ${title}'s website`}
       rel='noopener noreferrer'
-      className='w-full sm:w-1/3 flex-grow rounded-lg my-1 p-2 trans flex flex-col no-underline px-4 lg:px-8'
+      className='w-full sm:w-1/3 rounded-lg my-1 p-2 trans flex flex-col no-underline px-4 lg:px-8 mx-auto'
       variants={itemVariants}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}

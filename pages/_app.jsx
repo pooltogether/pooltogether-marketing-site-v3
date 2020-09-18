@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps, router }) {
         <Layout
           props={pageProps}
         >
-          <AnimatePresence
+          {/* <AnimatePresence
             exitBeforeEnter
             onExitComplete={() => {
               setTimeout(() => {
@@ -87,8 +87,8 @@ function MyApp({ Component, pageProps, router }) {
               }, 300)
               
             }}
-          >
-            <motion.div
+          > */}
+            {/* <motion.div
               id='content-animation-wrapper'
               key={router.route}
               initial={{
@@ -100,10 +100,10 @@ function MyApp({ Component, pageProps, router }) {
               animate={{
                 opacity: 1
               }}
-            >
+            > */}
               <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
+            {/* </motion.div> */}
+          {/* </AnimatePresence> */}
         </Layout>
       </AllContextProviders>
     </V3ApolloWrapper>

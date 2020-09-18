@@ -90,9 +90,9 @@ export const Footer = () => {
                     </span>
                     <ul>
                       <FooterLink
-                        href='https://docs.pooltogether.com'
+                        href='/developers'
                       >
-                        Documentation
+                        Developers
                       </FooterLink>
                       {/* <FooterLink
                         href='/how-it-works'
@@ -253,11 +253,11 @@ export const Footer = () => {
             </span>
           </div>
 
-          <div className='w-1/2 xs:w-1/3 sm:w-1/4 lg:w-1/5'>
+          <div className='w-32 lg:w-32'>
             <nav
               className='flex justify-between w-full'
             >
-              <a
+              {/* <a
                 className={classnames(
                   'mt-2 sm:mt-4',
                   linkClassNames,
@@ -265,7 +265,7 @@ export const Footer = () => {
                 href='/privacy'
               >
                 Privacy
-              </a>
+              </a> */}
               <a
                 className={classnames(
                   'mt-2 sm:mt-4',

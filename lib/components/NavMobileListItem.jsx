@@ -21,7 +21,7 @@ const variants = {
 
 const colors = ['#FF81ED', '#FFD1B3', '#69FEB8', '#80FFF6', '#5FA3FF']
 
-export const NavMobileListItem = ({ link, index }) => {
+export const NavMobileListItem = ({ link, index, toggleOpen }) => {
   const style = { color: `${colors[index]}` }
 
   return <>
@@ -37,6 +37,7 @@ export const NavMobileListItem = ({ link, index }) => {
         as={link.as}
       >
         <a
+          onClick={toggleOpen}
           style={style}
         >
           {link.label}
