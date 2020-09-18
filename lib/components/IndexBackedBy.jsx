@@ -10,6 +10,8 @@ import DTCCapitalSvg from 'assets/images/dtc-capital.svg'
 import IdeoSvg from 'assets/images/ideo.svg'
 import ParaFiSvg from 'assets/images/parafi-logo.svg'
 import MetaCartelSvg from 'assets/images/metacartel-logo.svg'
+import TheLaoSvg from 'assets/images/the-lao-logo.svg'
+import RobotVenturesSvg from 'assets/images/robot-ventures-logo.svg'
 
 export const IndexBackedBy = () => {
   const controls = useAnimation()
@@ -90,6 +92,17 @@ export const IndexBackedBy = () => {
           url='https://metacartel.org'
         />
 
+        <GridItemBackedBy
+          title={'The LAO'}
+          img={TheLaoSvg}
+          url='https://thelao.io'
+        />
+        
+        <GridItemBackedBy
+          title={'Robot Ventures'}
+          img={RobotVenturesSvg}
+          url='https://twitter.com/robotventures'
+        />
       </motion.div>
 
 
