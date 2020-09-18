@@ -14,7 +14,7 @@ const Path = props => (
 export const NavMobileMenuToggle = ({ toggle }) => (
   <button
     onClick={toggle}
-    className='hamburger-button pointer-events-auto hover:bg-blue trans trans-fast'
+    className='hamburger-button pointer-events-auto opacity-100 trans trans-fast'
   >
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path

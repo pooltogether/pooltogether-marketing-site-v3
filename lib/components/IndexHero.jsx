@@ -26,6 +26,7 @@ export const IndexHero = (
   const startVideo = (e) => {
     e.preventDefault()
     setPlayVideo(true)
+
     setTimeout(() => {
       setPlayVideo(false)
     }, 500)

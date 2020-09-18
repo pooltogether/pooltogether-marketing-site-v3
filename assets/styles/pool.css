@@ -98,6 +98,14 @@ p {
   }
 }
 
+#video-player_popover_container {
+  pointer-events: none;
+}
+
+body.wistia_popover_mode #video-player_popover_container {
+  pointer-events: auto;
+}
+
 .wistia_popover_mode {
   overflow: hidden;
 }
@@ -448,7 +456,7 @@ li.nav-mobile-listitem {
 
 .custom-shape-divider-top-1600195439 {
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -460,6 +468,8 @@ li.nav-mobile-listitem {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
+
+  max-width: 480px;
 
   width: 100%;
 }
