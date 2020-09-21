@@ -66,7 +66,7 @@ export const IndexHero = (
             href='https://app.pooltogether.com'
             as='https://app.pooltogether.com'
           >
-            {t('getTickets')}
+            Get tickets!
           </ButtonLink>
         </div>
       </div>
@@ -89,7 +89,7 @@ export const IndexHero = (
           className='pool-container flex flex-col sm:flex-row pt-10 sm:mt-32 sm:pt-20 text-left mx-auto'
         >
           <div
-            className='mx-auto w-10/12 xs:w-9/12 sm:w-1/2 pt-8 sm:pt-12 lg:px-12 lg:py-20 text-center sm:text-left'
+            className='mx-auto xs:w-9/12 sm:w-1/2 pt-8 sm:pt-8 lg:px-12 lg:py-12 text-center sm:text-left'
           >
             <h2
               className='text-flashy'
@@ -97,37 +97,38 @@ export const IndexHero = (
               PoolTogether
             </h2>
 
-            <div className='font-number font-bold text-xs sm:text-lg sm:pr-20 pb-2 sm:pb-0'>
+            <div className='font-number font-bold text-xs sm:text-lg sm:pr-20 lg:pr-10 pb-2 sm:pb-0'>
               is a protocol for no-loss money games powered by Ethereum.
             </div>
           </div>
 
           <div
-            className='sm:w-1/2 flex flex-col items-center z-10'
+            className='flex flex-col items-center z-10'
           >
             <button
               onClick={startVideo}
-              className='bg-vid-holo h-64 flex items-center justify-center trans'
+              className='bg-vid-holo flex items-start justify-center trans'
               role='img'
               aria-label='Holographic gradient'
             >
-              <WistiaPlayer
-                play={playVideo}
-              />
-
-              <div
-                className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
-              >
-                <div
-                  className='bg-vid-tri'
+              <div className='bg-vid-holo--inner flex items-center justify-center'>
+                <WistiaPlayer
+                  play={playVideo}
                 />
+
+                <div
+                  className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
+                >
+                  <div
+                    className='bg-vid-tri'
+                  />
+                </div>
               </div>
             </button>
             
-
             <button
               onClick={startVideo}
-              className='text-center font-bold my-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
+              className='text-center font-bold mb-1 mb-4 text-white hover:text-highlight-2 trans hover:border-highlight-2 border-b border-transparent'
             >
               Watch how it works!
             </button>

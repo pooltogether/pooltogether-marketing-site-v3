@@ -40,7 +40,6 @@ function MyApp({ Component, pageProps, router }) {
 
   useEffect(() => {
     const handleExitComplete = () => {
-      console.log(window)
       if (typeof window !== 'undefined') {
         window.scrollTo({ top: 0 })
       }

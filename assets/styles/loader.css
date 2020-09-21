@@ -104,26 +104,3 @@ span {
   }
 }
 
-
-
-.loader01 {
-  width: 20px;
-  height: 20px;
-  border: 0.15rem solid #3857ee;
-  border-right-color: transparent;
-  border-radius: 50%;
-  position: relative;
-  animation: loader-rotate 1s linear infinite;
-  left: 2px;
-  top: 50%;
-  margin: -10px auto 0 auto;
-}
-
-@keyframes loader-rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg); 
-  } 
-}
