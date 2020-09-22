@@ -18,14 +18,14 @@ export const CommunityPage = (props) => {
       className='pool-container mx-auto flex flex-col text-base h-full xs:pr-32 sm:pr-32 lg:pr-64 z-10 relative'
     >
       <h2
-        className='mt-12 mb-20'
+        className='mt-12 mb-20 text-center xs:text-left'
       >
         Join the discussion and <span className='text-flashy'>help shape the future</span> of PoolTogether
       </h2>
 
       {/* w-1/2 w-128 sm:w-1/2 lg:w-7/12 */}
       <div className='flex flex-col xs:flex-row'>
-        <div className='mb-4 mr-4'>
+        <div className='mb-4 xs:mr-4'>
           <ButtonLink
             secondary
             href='https://gov.pooltogether.com/'

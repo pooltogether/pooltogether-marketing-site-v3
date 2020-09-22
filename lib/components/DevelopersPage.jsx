@@ -15,16 +15,18 @@ export const DevelopersPage = (props) => {
     />
 
     <div
-      className='pool-container mx-auto flex flex-col text-base h-full xs:pr-32 sm:pr-32 lg:pr-64 z-10 relative'
+      className='pool-container mx-auto flex flex-col text-base h-full xs:pr-32 sm:pr-32 lg:pr-0 z-10 relative'
     >
       <h2
-        className='mt-12 mb-20'
+        className='mt-12 mb-20 text-center xs:text-left lg:w-7/12'
       >
-        <span className='text-flashy'>Build your own</span> prize pools and prize strategies or integrate with ours.
+        {/* Build no loss prize games or integrate with existing ones */}
+        <span className='text-flashy'>Build or integrate</span> with no-loss prize games
+        {/* <span className='text-flashy'>Build your own</span> prize pools and prize strategies or integrate with ours. */}
       </h2>
 
       <div className='flex flex-col xs:flex-row'>
-        <div className='mb-4 mr-4'>
+        <div className='mb-4 xs:mr-4'>
           <ButtonLink
             secondary
             href='https://docs.pooltogether.com'
