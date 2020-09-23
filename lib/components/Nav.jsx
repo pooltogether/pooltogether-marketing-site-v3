@@ -65,9 +65,8 @@ export const Nav = (props) => {
 
 
       <Link
-        href='/account'
-        as='/account'
-        shallow
+        href='https://staging-v3.pooltogether.com'
+        as='https://staging-v3.pooltogether.com'
       >
         <a
           className={classnames(

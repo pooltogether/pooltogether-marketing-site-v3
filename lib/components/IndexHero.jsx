@@ -63,8 +63,8 @@ export const IndexHero = (
           className='text-center'
         >
           <ButtonLink
-            href='https://app.pooltogether.com'
-            as='https://app.pooltogether.com'
+            href='https://staging-v3.pooltogether.com'
+            as='https://staging-v3.pooltogether.com'
           >
             Get tickets!
           </ButtonLink>
