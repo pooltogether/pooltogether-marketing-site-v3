@@ -4,7 +4,7 @@ export const Meta = ({ title }) => {
   const defaultTitle = 'PoolTogether'
   title = title ? `${title} - ${defaultTitle}` : defaultTitle
 
-  const url = `https://app.pooltogether.com`
+  const url = `https://pooltogether.com`
   const description = `PoolTogether`
   const keywords = 'ethereum'
   const twitterHandle = '@PoolTogether_'
