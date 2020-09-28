@@ -30,11 +30,11 @@ export const BrandAssetsPage = class _BrandAssetsPage extends PureComponent {
 
         <BoxLinkWithIcon
           isExternal
-          href='https://github.com/pooltogether/pooltogether--brand-assets/raw/master/pooltogether-brand-assets-v1.1.1.zip'
+          href='https://github.com/pooltogether/pooltogether--brand-assets/blob/141936c859553a2a42ac96ed807551b85a4d56d9/pooltogether-brand-assets-v1.2.0.zip?raw=true'
           title='Download brand assets zip package'
           icon={'download'}
         >
-          pooltogether-brand-assets-v1.1.1.zip
+          pooltogether-brand-assets-v1.2.0.zip
         </BoxLinkWithIcon>
 
         <br/>
