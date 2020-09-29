@@ -44,7 +44,7 @@ export const IndexHero = (
         <h1
           className='banner-text mx-auto font-bold text-center'
         >
-          <span className='text-flashy px-4 leading-10 sm:leading-none'>Win $1000 every week</span>
+          <span className='text-flashy px-4 leading-10 sm:leading-none'>Win $4,527 every week</span>
           <div className='banner-text--small'>
             just by saving your money.
         </div>
