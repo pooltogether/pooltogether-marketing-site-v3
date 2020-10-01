@@ -25,8 +25,8 @@ const links = [
   },
   {
     label: 'App',
-    href: 'https://staging-v3.pooltogether.com',
-    as: 'https://staging-v3.pooltogether.com'
+    href: 'https://app-v3.pooltogether.com',
+    as: 'https://app-v3.pooltogether.com'
   },
 ]
 
