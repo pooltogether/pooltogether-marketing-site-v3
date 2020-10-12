@@ -96,8 +96,8 @@ export const CareerPage = class _CareerPage extends Component {
           className='mt-10'
         >
           <ButtonLink
-            as={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
-            href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
+            as={`mailto:careers@pooltogether.com?subject=${titleEmail}`}
+            href={`mailto:careers@pooltogether.com?subject=${titleEmail}`}
           >
             Apply now
           </ButtonLink>
@@ -107,8 +107,8 @@ export const CareerPage = class _CareerPage extends Component {
           className='mt-8'
         >
           If you're interested in a position, apply to <a
-            href={`mailto:careers@pooltogether.us?subject=${titleEmail}`}
-          >careers@pooltogether.us</a> with your resume, Github profile, Dribbble portfolio, or any other relevant information.
+            href={`mailto:careers@pooltogether.com?subject=${titleEmail}`}
+          >careers@pooltogether.com</a> with your resume, Github profile, Dribbble portfolio, or any other relevant information.
         </p>
       </div>
     </>

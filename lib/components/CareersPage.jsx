@@ -46,32 +46,6 @@ export const CareersPage = class _CareersPage extends Component {
         </h4>
 
 
-        <div className='mt-4'>
-          <Link
-            href='/careers/senior-designer'
-            as='/careers/senior-designer'
-            shallow={true}
-          >
-            <a
-              className='mt-0 sm:mt-8 mb-0 text-lg trans'
-            >
-              Senior Product Designer
-            </a>
-          </Link>
-
-          <h5
-            className='mb-0 mt-0'
-          >Full-time or Contract position</h5>
-          <h6
-            className='mb-4 -mt-1 text-sm'
-          >Vancouver, New York, or remote</h6>
-        </div>
-
-        <h4
-          className='mt-8 sm:mt-12 mb-6'
-        >
-          Positions: Not currently hiring
-        </h4>
 
         <div className='mt-4'>
           <Link
@@ -80,15 +54,57 @@ export const CareersPage = class _CareersPage extends Component {
             shallow={true}
           >
             <a
-              className='mt-0 sm:mt-8 mb-0 text-lg trans'
+              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
             >
               Senior Ethereum Engineer
-            </a>
+          </a>
           </Link>
 
           <h5
             className='mb-0 mt-0'
           >Full-time position</h5>
+          <h6
+            className='mb-4 -mt-1 text-sm'
+          >Vancouver, New York, or remote</h6>
+        </div>
+
+        <div className='mt-4'>
+          <Link
+            href='/careers/senior-frontend-engineer'
+            as='/careers/senior-frontend-engineer'
+            shallow={true}
+          >
+            <a
+              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
+            >
+              Senior Frontend Engineer
+          </a>
+          </Link>
+
+          <h5
+            className='mb-0 mt-0'
+          >Full-time position</h5>
+          <h6
+            className='mb-4 -mt-1 text-sm'
+          >Vancouver, New York, or remote</h6>
+        </div>
+
+        <div className='mt-4'>
+          <Link
+            href='/careers/community-advocate'
+            as='/careers/community-advocate'
+            shallow={true}
+          >
+            <a
+              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
+            >
+              Community Advocate
+          </a>
+          </Link>
+
+          <h5
+            className='mb-0 mt-0'
+          >Part-time position</h5>
           <h6
             className='mb-4 -mt-1 text-sm'
           >Vancouver, New York, or remote</h6>
