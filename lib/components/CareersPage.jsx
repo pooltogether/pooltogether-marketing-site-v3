@@ -48,20 +48,22 @@ export const CareersPage = class _CareersPage extends Component {
 
 
         <div className='mt-4'>
-          <Link
-            href='/careers/senior-ethereum-engineer'
-            as='/careers/senior-ethereum-engineer'
-            shallow={true}
-          >
-            <a
-              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
+          <h5>
+            <Link
+              href='/careers/senior-ethereum-engineer'
+              as='/careers/senior-ethereum-engineer'
+              shallow={true}
             >
-              Senior Ethereum Engineer
-          </a>
-          </Link>
+              <a
+                className='mt-0 sm:mt-4 mb-0 text-blue-600 hover:text-blue-400 trans'
+              >
+                Senior Ethereum Engineer
+            </a>
+            </Link>
+          </h5>
 
           <h5
-            className='mb-0 mt-0'
+            className='mb-0 -mt-2 text-default'
           >Full-time position</h5>
           <h6
             className='mb-4 -mt-1 text-sm'
@@ -69,20 +71,22 @@ export const CareersPage = class _CareersPage extends Component {
         </div>
 
         <div className='mt-4'>
-          <Link
-            href='/careers/senior-frontend-engineer'
-            as='/careers/senior-frontend-engineer'
-            shallow={true}
-          >
-            <a
-              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
+          <h5>
+            <Link
+              href='/careers/senior-frontend-engineer'
+              as='/careers/senior-frontend-engineer'
+              shallow={true}
             >
-              Senior Frontend Engineer
-          </a>
-          </Link>
+              <a
+                className='mt-0 sm:mt-4 mb-0 text-blue-600 hover:text-blue-400 trans'
+              >
+                Senior Frontend Engineer
+            </a>
+            </Link>
+          </h5>
 
           <h5
-            className='mb-0 mt-0'
+            className='mb-0 -mt-2 text-default'
           >Full-time position</h5>
           <h6
             className='mb-4 -mt-1 text-sm'
@@ -90,20 +94,22 @@ export const CareersPage = class _CareersPage extends Component {
         </div>
 
         <div className='mt-4'>
-          <Link
-            href='/careers/community-advocate'
-            as='/careers/community-advocate'
-            shallow={true}
-          >
-            <a
-              className='mt-0 sm:mt-8 mb-0 text-blue-600 hover:text-blue-400 text-lg trans'
+          <h5>
+            <Link
+              href='/careers/community-advocate'
+              as='/careers/community-advocate'
+              shallow={true}
             >
-              Community Advocate
-          </a>
-          </Link>
+              <a
+                className='mt-0 sm:mt-4 mb-0 text-blue-600 hover:text-blue-400 trans'
+              >
+                Community Advocate
+            </a>
+            </Link>
+          </h5>
 
           <h5
-            className='mb-0 mt-0'
+            className='mb-0 -mt-2 text-default'
           >Part-time position</h5>
           <h6
             className='mb-4 -mt-1 text-sm'
