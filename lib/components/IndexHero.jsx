@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
+import { motion } from 'framer-motion'
+import { ethers } from 'ethers'
 
 import { Trans, useTranslation } from 'lib/../i18n'
-// import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
+import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
 import { ButtonLink } from 'lib/components/ButtonLink'
 import { WistiaPlayer } from 'lib/components/WistiaPlayer'
 
@@ -14,6 +16,25 @@ export const IndexHero = (
   props,
 ) => {
   const { t } = useTranslation()
+
+  const poolDataContext = useContext(PoolDataContext)
+  const {
+    pools,
+  } = poolDataContext
+
+  let totalPrizes = ethers.utils.bigNumberify(0)
+  pools?.forEach(_pool => {
+    const decimals = _pool?.underlyingCollateralDecimals
+
+    const cumulativePrizeAmountsForPool = normalizeTo18Decimals(
+      _pool.prizeEstimate,
+      decimals
+    )
+
+    totalPrizes = totalPrizes.add(
+      cumulativePrizeAmountsForPool
+    )
+  })
 
   const [playVideo, setPlayVideo] = useState(false)
   // const poolDataContext = useContext(PoolDataContext)
@@ -41,13 +62,30 @@ export const IndexHero = (
           minHeight: 290
         }}
       >
-        <h1
+        <motion.h1
+          animate={totalPrizes.gt(0) ? 'enter' : 'exit'}
+          initial='exit'
+          variants={{
+            enter: {
+              scale: 1,
+              height: 'auto',
+              transition: {
+                duration: 0.25
+              }
+            },
+            exit: {
+              scale: 0,
+              height: 0,
+            }
+          }}
           className='banner-text mx-auto font-bold text-center'
         >
           <span className='text-flashy px-4 leading-10 sm:leading-none'>Win $4,527 every week</span>
           <div className='banner-text--small'>
             just by saving your money.
-        </div>
+          </div>
+        </motion.h1>
+
           {/* <Trans
           i18nKey='youCouldWin'
           defaults='You could <flashy>win ${{totalPrizes}} every week</flashy> just by saving your money.'
@@ -56,7 +94,6 @@ export const IndexHero = (
             flashy: <span className='text-flashy' />
           }}
         /> */}
-        </h1>
 
 
         <div

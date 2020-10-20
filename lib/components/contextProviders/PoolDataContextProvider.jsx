@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
 import { FetchGenericChainData } from 'lib/components/FetchGenericChainData'
 import { GraphDataQueries } from 'lib/components/queryComponents/GraphDataQueries'
-import { getContractAddresses } from 'lib/services/getContractAddresses'
-import { readProvider } from 'lib/utils/readProvider'
+import { readProvider } from 'lib/services/readProvider'
+import { getContractAddresses } from 'lib/utils/getContractAddresses'
 import { networkNameToChainId } from 'lib/utils/networkNameToChainId'
 
 export const PoolDataContext = React.createContext()
@@ -14,9 +13,6 @@ export const PoolDataContextProvider = (props) => {
   const chainId = networkNameToChainId(networkName)
 
   const [defaultReadProvider, setDefaultReadProvider] = useState({})
-
-  const router = useRouter()
-  const querySymbol = router?.query?.symbol?.toLowerCase()
 
   useEffect(() => {
     const getReadProvider = async () => {
@@ -36,7 +32,6 @@ export const PoolDataContextProvider = (props) => {
       {({
         graphDataLoading,
         dynamicPoolData,
-        dynamicPrizeStrategiesData,
       }) => {
         return <FetchGenericChainData
           {...props}
@@ -46,58 +41,29 @@ export const PoolDataContextProvider = (props) => {
         >
           {({ genericChainData }) => {
             let pools = []
-
             
             if (!graphDataLoading) {
               pools = [
                 {
-                  ...genericChainData.daiPrizeStrategy,
+                  ...genericChainData.dai,
                   ...dynamicPoolData.daiPool,
-                  ...dynamicPrizeStrategiesData.daiPrizeStrategy,
                   name: 'DAI Pool',
                   frequency: 'Weekly',
                   symbol: 'PT-cDAI',
                 },
-                {
-                  ...genericChainData.usdcPrizeStrategy,
-                  ...dynamicPoolData.usdcPool,
-                  ...dynamicPrizeStrategiesData.usdcPrizeStrategy,
-                  name: 'USDC Pool',
-                  frequency: 'Weekly',
-                  symbol: 'PT-cUSDC',
-                },
                 // {
-                //   ...genericChainData.usdtPrizeStrategy,
-                //   ...dynamicPoolData.usdtPool,
-                //   ...dynamicPrizeStrategiesData.usdtPrizeStrategy,
-                //   name: 'Tether Pool',
+                //   ...dynamicPoolData.usdcPool,
+                //   name: 'USDC Pool',
                 //   frequency: 'Weekly',
-                //   symbol: 'PT-cUSDT',
-                // },
-                // {
-                //   ...genericChainData.wbtcPrizeStrategy,
-                //   ...dynamicPoolData.wbtcPool,
-                //   ...dynamicPrizeStrategiesData.wbtcPrizeStrategy,
-                //   yieldSource: 'Compound',
-                //   name: 'Weekly Wrapped Bitcoin Pool',
-                //   symbol: 'PT-cWBTC',
+                //   symbol: 'PT-cUSDC',
                 // },
               ]
-            }
-
-            let pool = null
-            if (querySymbol && pools?.length > 0) {
-              pool = pools.find(_pool => {
-                let symbol = _pool?.symbol?.toLowerCase()
-                return symbol === querySymbol
-              })
             }
 
             return <PoolDataContext.Provider
               value={{
                 loading: graphDataLoading,
                 defaultReadProvider,
-                pool,
                 pools,
                 poolAddresses,
                 dynamicPoolData,
