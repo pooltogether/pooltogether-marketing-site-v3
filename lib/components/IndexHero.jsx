@@ -6,6 +6,8 @@ import { Trans, useTranslation } from 'lib/../i18n'
 import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
 import { ButtonLink } from 'lib/components/ButtonLink'
 import { WistiaPlayer } from 'lib/components/WistiaPlayer'
+import { displayAmountInEther } from 'lib/utils/displayAmountInEther'
+import { normalizeTo18Decimals } from 'lib/utils/normalizeTo18Decimals'
 
 // const PaperDynamic = dynamic(() =>
 //   import('lib/components/paper').then(mod => mod.Paper),
@@ -80,7 +82,10 @@ export const IndexHero = (
           }}
           className='banner-text mx-auto font-bold text-center'
         >
-          <span className='text-flashy px-4 leading-10 sm:leading-none'>Win $4,527 every week</span>
+          <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
+            totalPrizes,
+            { precision: 0 }
+          )} every week</span>
           <div className='banner-text--small'>
             just by saving your money.
           </div>

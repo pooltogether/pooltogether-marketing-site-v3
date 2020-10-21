@@ -4,23 +4,8 @@ export const dynamicPrizeStrategyFragment = gql`
   fragment dynamicPrizeStrategyFragment on PrizeStrategy {
     id
 
-    prizePool {
+    singleRandomWinner {
       id
     }
-
-    creator
-    ticket
-    sponsorship
-    rng
-
-    prizesCount
-
-    currentPrizeId
-    currentState
-  
-    prizePeriodSeconds
-
-    exitFeeMantissa
-    creditRateMantissa
   }
 `

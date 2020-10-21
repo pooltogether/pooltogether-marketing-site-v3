@@ -29,6 +29,7 @@ export const FetchGenericChainData = (props) => {
       dai: {},
     }
 
+    // console.log({ poolData})
     try {
       chainData.dai = await fetchGenericChainData(
         provider,

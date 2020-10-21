@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { FetchGenericChainData } from 'lib/components/FetchGenericChainData'
 import { GraphDataQueries } from 'lib/components/queryComponents/GraphDataQueries'
 import { readProvider } from 'lib/services/readProvider'
+import { calculateEstimatedPoolPrize } from 'lib/utils/calculateEstimatedPoolPrize'
 import { getContractAddresses } from 'lib/utils/getContractAddresses'
 import { networkNameToChainId } from 'lib/utils/networkNameToChainId'
 
@@ -32,12 +33,14 @@ export const PoolDataContextProvider = (props) => {
       {({
         graphDataLoading,
         dynamicPoolData,
+        dynamicPrizeStrategiesData,
       }) => {
         return <FetchGenericChainData
           {...props}
           chainId={chainId}
           provider={defaultReadProvider}
           poolAddresses={poolAddresses}
+          poolData={dynamicPoolData}
         >
           {({ genericChainData }) => {
             let pools = []
@@ -50,13 +53,12 @@ export const PoolDataContextProvider = (props) => {
                   name: 'DAI Pool',
                   frequency: 'Weekly',
                   symbol: 'PT-cDAI',
+                  prizeEstimate: calculateEstimatedPoolPrize({
+                    ...genericChainData.dai,
+                    ...dynamicPoolData.daiPool,
+                    ...dynamicPrizeStrategiesData.daiPrizeStrategy,
+                  }),
                 },
-                // {
-                //   ...dynamicPoolData.usdcPool,
-                //   name: 'USDC Pool',
-                //   frequency: 'Weekly',
-                //   symbol: 'PT-cUSDC',
-                // },
               ]
             }
 
