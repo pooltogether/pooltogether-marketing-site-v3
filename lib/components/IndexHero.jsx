@@ -27,6 +27,7 @@ export const IndexHero = (
   let totalPrizes = ethers.utils.bigNumberify(0)
   pools?.forEach(_pool => {
     const decimals = _pool?.underlyingCollateralDecimals
+    if (!decimals) { return }
 
     const cumulativePrizeAmountsForPool = normalizeTo18Decimals(
       _pool.prizeEstimate,
