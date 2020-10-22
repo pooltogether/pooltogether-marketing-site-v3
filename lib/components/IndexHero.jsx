@@ -64,7 +64,7 @@ export const IndexHero = (
           minHeight: 290
         }}
       >
-        <motion.h1
+        <motion.div
           animate={totalPrizes.gt(0) ? 'enter' : 'exit'}
           initial='exit'
           variants={{
@@ -80,37 +80,30 @@ export const IndexHero = (
               height: 0,
             }
           }}
-          className='banner-text mx-auto font-bold text-center'
         >
-          <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
-            totalPrizes,
-            { precision: 0 }
-          )} every week</span>
-          <div className='banner-text--small'>
-            just by saving your money.
-          </div>
-        </motion.h1>
-
-          {/* <Trans
-          i18nKey='youCouldWin'
-          defaults='You could <flashy>win ${{totalPrizes}} every week</flashy> just by saving your money.'
-          values={{ totalPrizes: '1,039' }}
-          components={{
-            flashy: <span className='text-flashy' />
-          }}
-        /> */}
-
-
-        <div
-          className='text-center'
-        >
-          <ButtonLink
-            href='https://app-v3.pooltogether.com'
-            as='https://app-v3.pooltogether.com'
+          <h1
+            className='banner-text mx-auto font-bold text-center'
           >
-            Get tickets!
-          </ButtonLink>
-        </div>
+            <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
+              totalPrizes,
+              { precision: 0 }
+            )} every week</span>
+            <div className='banner-text--small'>
+              just by saving your money.
+            </div>
+          </h1>
+
+          <div
+            className='text-center'
+          >
+            <ButtonLink
+              href='https://app-v3.pooltogether.com'
+              as='https://app-v3.pooltogether.com'
+            >
+              Get tickets!
+            </ButtonLink>
+          </div>
+        </motion.div>
       </div>
 
       
