@@ -41,6 +41,7 @@
     "beautiful-react-hooks": "^0.30.0",
     "classnames": "^2.2.6",
     "ethers": "^4.0.47",
+    "fathom-client": "^3.0.0",
     "feather-icons-react": "^0.4.1",
     "framer-motion": "^2.6.15",
     "graphql": "^15.3.0",

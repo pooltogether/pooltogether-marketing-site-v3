@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import * as Fathom from 'fathom-client'
 import { ToastContainer } from 'react-toastify'
 
 import { AllContextProviders } from 'lib/components/contextProviders/AllContextProviders'
@@ -48,6 +48,32 @@ function MyApp({ Component, pageProps, router }) {
     router.events.on('routeChangeComplete', handleExitComplete)
     return () => {
       router.events.off('routeChangeComplete', handleExitComplete)
+    }
+  }, [])
+
+  useEffect(() => {
+    const fathomSiteId = process.env.NEXT_JS_FATHOM_SITE_ID
+
+    if (fathomSiteId) {
+      Fathom.load(process.env.NEXT_JS_FATHOM_SITE_ID, {
+        url: 'https://goose.pooltogether.com/script.js',
+        includedDomains: [
+          'pooltogether.com',
+          'www.pooltogether.com',
+        ]
+      })
+
+      function onRouteChangeComplete(url) {
+        if (window['fathom']) {
+          window['fathom'].trackPageview()
+        }
+      }
+
+      router.events.on('routeChangeComplete', onRouteChangeComplete)
+
+      return () => {
+        router.events.off('routeChangeComplete', onRouteChangeComplete)
+      }
     }
   }, [])
 
