@@ -15,9 +15,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-        </Head>
         <Meta />
+        <Head />
 
         <body
           className='bg-body'
