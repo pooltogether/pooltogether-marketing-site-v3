@@ -153,7 +153,7 @@ export const IndexHero = (
                 />
 
                 <div
-                  className='bg-vid-circle flex items-center justify-center hover:bg-highlight-5 trans'
+                  className='bg-vid-circle flex items-center justify-center hover:bg-highlight-2 trans'
                 >
                   <div
                     className='bg-vid-tri'

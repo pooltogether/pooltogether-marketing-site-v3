@@ -459,7 +459,8 @@ li.nav-mobile-listitem {
 }
 
 .bg-vid-holo {
-  background-image: url('/bg-vid-holo.png');
+  background-image: url('/vidframe.jpg');
+  /* background-image: url('/bg-vid-holo.png'); */
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
@@ -501,10 +502,14 @@ li.nav-mobile-listitem {
 
 .bg-vid-circle {
   @apply shadow-elevation;
-  background: #561FA3;
-  border-radius: 100%;
+  background: rgba(53, 240, 208, 0.8);
+  border-radius: 6%;
   height: 104px;
-  width: 104px;
+  width: 144px;
+}
+
+.bg-vid-holo:hover .bg-vid-circle {
+  background: rgba(53, 240, 208, 1);
 }
 
 .bg-vid-tri {

@@ -1527,10 +1527,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.2.0.tgz#3e6b3a7662d8ed64271ade96ef42655db983fd9d"
   integrity sha512-bUOmkSoPkjnUyMiKo6RYnb0VHBk5D9KKDAgNLzF41aqAM3TeE0yGdFF5dVRcV60pZdJLlyFT/jjXIZCWyyEzAQ==
 
-"@pooltogether/current-pool-data@3.0.0-rc.1b":
-  version "3.0.0-rc.1b"
-  resolved "https://registry.yarnpkg.com/@pooltogether/current-pool-data/-/current-pool-data-3.0.0-rc.1b.tgz#b656319f04c560bdfe88e1fd883c98fb383f2d6b"
-  integrity sha512-DWkKs3lzCyp/QPAPMrjtJTyG8uUoH23thivUkclFvIE69UvjnvvqNjX9X32sugfGNwQYK+7hFLTc508QQtTYFA==
+"@pooltogether/current-pool-data@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pooltogether/current-pool-data/-/current-pool-data-3.0.1.tgz#2cab2078d7df4551fb3074fbcb5c81787f9911cf"
+  integrity sha512-NB4TopoQy/k4xw6RpZopmyxmeYSh8XzU+q9AXLaLKYY9fKwwpbrsk9ZhhzPWX88qm2+grF9AHRq6/+7hcjxrXA==
 
 "@pooltogether/etherplex@^0.2.3":
   version "0.2.3"
@@ -1548,23 +1548,23 @@
   dependencies:
     "@openzeppelin/contracts-ethereum-package" "^3.0.0"
 
-"@pooltogether/pooltogether-contracts@^3.0.0-rc.1":
-  version "3.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-contracts/-/pooltogether-contracts-3.0.0-rc.1.tgz#c2b6011484105083eecdbd645cfded63f30e5bfe"
-  integrity sha512-EJSjd2bF8rREgtNh+1IFbFDqe+Qv3eL7OgNsqSofdJTm9IA3kWnvOMYrMhuTPaOE5Z9QZ7iTJqquXe5J1XsIrw==
+"@pooltogether/pooltogether-contracts@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-contracts/-/pooltogether-contracts-3.0.0.tgz#3a472c7b237a07f046523cde3e7c5c7a1e0c2c43"
+  integrity sha512-rRVHByPzvC3uMXo3HvckjPYpsNSzLr2JjdS0ouRqEn/7LcWHWqKVVDUAad+dc38W5rs8j72kW5tqXI8uKvpqFg==
   dependencies:
     "@opengsn/gsn" "^2.0.1"
     "@openzeppelin/contracts-ethereum-package" "3.0.0"
     "@pooltogether/fixed-point" pooltogether/fixed-point.git#0.1.0-upgradeable.1
-    "@pooltogether/pooltogether-rng-contracts" "^1.0.0-alpha.7"
+    "@pooltogether/pooltogether-rng-contracts" "^1.0.0"
     "@pooltogether/uniform-random-number" pooltogether/uniform-random-number#solidity-0.6
     deploy-eip-1820 "1.0.0"
     sortition-sum-tree-factory "0.1.0"
 
-"@pooltogether/pooltogether-rng-contracts@^1.0.0-alpha.7":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-rng-contracts/-/pooltogether-rng-contracts-1.0.0-alpha.9.tgz#5a12d7191040e2d00111bc4c388e741bae0899c8"
-  integrity sha512-i/vDZ1ILwRSsRxbxW6Bmes/3LDKaZGuO0rvwYwGwbyJApwDNw1NE1Srh9wXdihQp2t7v2OAThc6RkmOwi77Tnw==
+"@pooltogether/pooltogether-rng-contracts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-rng-contracts/-/pooltogether-rng-contracts-1.0.0.tgz#191d155dc960559cce06b7ec3b0f9ed2caed0f46"
+  integrity sha512-jQub/+qPLQwTFtbBCvvyIEqxJDEBEV/hgLKnuocBg2/GySWtHLz67WCy17bNn1hZw8nWIt8Ih8h+7iT2UJhtmQ==
 
 "@pooltogether/uniform-random-number@pooltogether/uniform-random-number#solidity-0.6":
   version "0.1.0"
@@ -13138,9 +13138,9 @@ web3-provider-engine@14.2.1:
     xhr "^2.2.0"
     xtend "^4.0.1"
 
-"web3-provider-engine@git+https://github.com/trufflesuite/provider-engine.git#web3-one":
+"web3-provider-engine@https://github.com/trufflesuite/provider-engine#web3-one":
   version "14.0.6"
-  resolved "git+https://github.com/trufflesuite/provider-engine.git#9694f5b4e5500651bd2ff689df8529bb5cf6b96f"
+  resolved "https://github.com/trufflesuite/provider-engine#9694f5b4e5500651bd2ff689df8529bb5cf6b96f"
   dependencies:
     async "^2.5.0"
     backoff "^2.5.0"
