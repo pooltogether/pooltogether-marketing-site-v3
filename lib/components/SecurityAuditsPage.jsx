@@ -24,24 +24,29 @@ export const SecurityAuditsPage = class _SecurityAuditsPage extends Component {
         <h5
           className='my-0'
         >
-          Quantstamp &amp; OpenZeppelin
+          OpenZeppelin
         </h5>
 
         <p>
-          Our smart contracts have been reviewed by Quantstamp &amp; OpenZeppelin.
+          Our smart contracts have been reviewed extensively by OpenZeppelin:
         </p>
 
-        <p>
-          PoolTogether's goal is to move to a completely decentralized governance model in the near future.
-        </p>
-
+        <BoxLinkWithImage
+          isExternal
+          href='https://blog.openzeppelin.com/pooltogether-v3-audit/'
+          title='OpenZeppelin V3 Audit'
+          imgSrc={OpenZeppelinSymbol}
+        >
+          OpenZeppelin V3 Audit
+        </BoxLinkWithImage>
+        
         <BoxLinkWithImage
           isExternal
           href='https://blog.openzeppelin.com/pooltogether-pods-audit/'
           title='OpenZeppelin Certificate'
           imgSrc={OpenZeppelinSymbol}
         >
-          OpenZeppelin Pods Audit
+          OpenZeppelin V2 Pods Audit
         </BoxLinkWithImage>
 
         <BoxLinkWithImage
@@ -50,9 +55,9 @@ export const SecurityAuditsPage = class _SecurityAuditsPage extends Component {
           title='OpenZeppelin PoolTogether Audit'
           imgSrc={OpenZeppelinSymbol}
         >
-          OpenZeppelin PoolTogether Audit
+          OpenZeppelin V2 PoolTogether Audit
         </BoxLinkWithImage>
-
+{/* 
         <BoxLinkWithImage
           href='/quantstamp-2-pool-together-2-1.pdf'
           title='Quantstamp Certificate'
@@ -67,7 +72,7 @@ export const SecurityAuditsPage = class _SecurityAuditsPage extends Component {
           imgSrc={QuantstampSymbol}
         >
           Quantstamp Certificate #1
-        </BoxLinkWithImage>
+        </BoxLinkWithImage> */}
 
         <br />
 
