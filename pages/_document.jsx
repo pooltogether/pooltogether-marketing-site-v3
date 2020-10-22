@@ -15,7 +15,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+        </Head>
+        <Meta />
+
         <body
           className='bg-body'
         >
@@ -23,7 +26,6 @@ class MyDocument extends Document {
           <NextScript />
           {/* <script src='/paper.js'></script> */}
           
-          <Meta />
         </body>
       </Html>
     )

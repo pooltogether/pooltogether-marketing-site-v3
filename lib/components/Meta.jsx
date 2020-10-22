@@ -20,32 +20,33 @@ export const Meta = ({ title }) => {
         {/* <link rel='stylesheet' href='https://use.typekit.net/ezg2vko.css' /> */}
         {/* <link rel="stylesheet" href="https://use.typekit.net/taj2nrx.css"></link> */}
 
-        <link rel='icon' type='image/png' href='/favicon.png' />
+        <link key='favicon' rel='icon' type='image/png' href='/favicon.png' />
         
-        <link rel='stylesheet' href='/animate.css' />
+        <link key='animate-stylesheet' rel='stylesheet' href='/animate.css' />
 
-        <meta name='theme-color' content='#1a083a' />
-        <meta name='description' content={description} />
-        <meta name='keywords' content={keywords} />
-        <meta name='author' content='PoolTogether LLC' />
-        <meta name='copyright' content={`Copyright ${new Date().getFullYear()}`} />
+        <meta key='theme-color' name='theme-color' content='#1a083a' />
+        <meta key='description' name='description' content={description} />
+        <meta key='keywords' name='keywords' content={keywords} />
+        <meta key='author' name='author' content='PoolTogether LLC' />
+        <meta key='copyright' name='copyright' content={`Copyright ${new Date().getFullYear()}`} />
 
         <meta property='og:title' content={title} />
-        <meta property='og:description' content={description} />
-        <meta property='og:site_name' content={title} />
-        <meta property='og:url' content={url} />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content={`${url}/pooltogether-facebook-share-image-1200-630@2x.png`} />
-        <meta property='og:rich_attachment' content='true' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
+        <meta key='og:description' property='og:description' content={description} />
+        <meta key='og:site_name' property='og:site_name' content={title} />
+        <meta key='og:url' property='og:url' content={url} />
+        <meta key='og:type' property='og:type' content='website' />
+        <meta key='og:image' property='og:image' content={`${url}/pooltogether-facebook-share-image-1200-630@2x.png`} />
+        <meta key='og:rich_attachment' property='og:rich_attachment' content='true' />
+        <meta key='og:image:width' property='og:image:width' content='1200' />
+        <meta key='og:image:height' property='og:image:height' content='630' />
         
         <meta property='twitter:title' content={title} />
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:site' content={twitterHandle} />
-        <meta property='twitter:image:src' content={`${url}/pooltogether-twitter-share-image-1200-675@2x.png`} />
+        <meta key='twitter:card' property='twitter:card' content='summary_large_image' />
+        <meta key='twitter:site' property='twitter:site' content={twitterHandle} />
+        <meta key='twitter:image' property='twitter:image' content={`${url}/pooltogether-twitter-share-image-1200-675@2x.png`} />
+        {/* <meta key='twitter:image:src' property='twitter:image:src' content={`${url}/pooltogether-twitter-share-image-1200-675@2x.png`} /> */}
         <meta property='twitter:url' content={url} />
-        <meta property='twitter:creator' content={twitterHandle} />
+        <meta key='twitter:creator' property='twitter:creator' content={twitterHandle} />
       </Head>
     </>
   )
