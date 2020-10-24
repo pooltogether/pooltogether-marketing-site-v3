@@ -6,7 +6,7 @@ export const SECONDS_PER_BLOCK = 14
 
 export const DEFAULT_TOKEN_PRECISION = 18
 
-export const MAINNET_POLLING_INTERVAL = 5000
+export const MAINNET_POLLING_INTERVAL = 30000
 
 const domain = process.env.NEXT_JS_DOMAIN_NAME && `.${process.env.NEXT_JS_DOMAIN_NAME}`
 

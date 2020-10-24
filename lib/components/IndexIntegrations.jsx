@@ -145,8 +145,8 @@ export const IndexIntegrations = () => {
           </div>
 
           <ButtonLink
-            href='/docs'
-            as='/docs'
+            href='https://docs.pooltogether.com'
+            as='https://docs.pooltogether.com'
             className='mt-8'
           >
             Go to docs

@@ -28,7 +28,6 @@ export const DynamicQueries = (
     loading: poolQueryLoading,
     error: poolQueryError,
     data: poolQueryData,
-    refetch: refetchPoolQuery
   } = useQuery(dynamicPrizePoolsQuery, {
     variables,
     fetchPolicy: 'network-only',
@@ -44,14 +43,12 @@ export const DynamicQueries = (
 
 
 
-
   let dynamicPrizeStrategiesData
 
   const {
     loading: prizeStrategyQueryLoading,
     error: prizeStrategyQueryError,
     data: prizeStrategyQueryData,
-    refetch: refetchPrizeStrategyQuery
   } = useQuery(dynamicSingleRandomWinnerQuery, {
     variables,
     fetchPolicy: 'network-only',
@@ -72,7 +69,5 @@ export const DynamicQueries = (
     dynamicDataLoading,
     dynamicPoolData,
     dynamicPrizeStrategiesData,
-    // refetchPoolQuery,
-    // refetchPrizeStrategyQuery,
   })
 }

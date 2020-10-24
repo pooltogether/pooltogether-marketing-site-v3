@@ -3,9 +3,6 @@ import gql from 'graphql-tag'
 export const dynamicSingleRandomWinnerFragment = gql`
   fragment dynamicSingleRandomWinnerFragment on SingleRandomWinner {
     id
-
-    owner
-    rng
     
     ticket {
       id
@@ -15,9 +12,5 @@ export const dynamicSingleRandomWinnerFragment = gql`
       id
       totalSupply
     }
-
-    prizePeriodSeconds
-    prizePeriodStartedAt
-    prizePeriodEndAt
   }
 `
