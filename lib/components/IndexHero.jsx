@@ -86,7 +86,7 @@ export const IndexHero = (
             className='banner-text mx-auto font-bold text-center'
           >
             <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
-              '8625000000000000000000',
+              '647280000000000000000',
               // totalPrizes,
               { precision: 0 }
             )} every week</span>
