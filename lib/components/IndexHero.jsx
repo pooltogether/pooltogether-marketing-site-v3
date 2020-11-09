@@ -66,7 +66,8 @@ export const IndexHero = (
         }}
       >
         <motion.div
-          animate={totalPrizes.gt(0) ? 'enter' : 'exit'}
+          animate={'enter'}
+          // animate={totalPrizes.gt(0) ? 'enter' : 'exit'}
           initial='exit'
           variants={{
             enter: {
@@ -86,7 +87,7 @@ export const IndexHero = (
             className='banner-text mx-auto font-bold text-center'
           >
             <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
-              '3394240000000000000000',
+              '7035000000000000000000',
               // totalPrizes,
               { precision: 0 }
             )} every week</span>
