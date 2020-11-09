@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import * as Fathom from 'fathom-client'
 import { ToastContainer } from 'react-toastify'
 
-import { AllContextProviders } from 'lib/components/contextProviders/AllContextProviders'
 import { Layout } from 'lib/components/Layout'
-import { V3ApolloWrapper } from 'lib/components/V3ApolloWrapper'
 
 import 'react-toastify/dist/ReactToastify.css'
 import '@reach/dialog/styles.css'
@@ -96,42 +94,38 @@ function MyApp({ Component, pageProps, router }) {
   // }
   
   return <>
-    <V3ApolloWrapper>
-      <AllContextProviders>
-        <Layout
-          props={pageProps}
-        >
-          {/* <AnimatePresence
-            exitBeforeEnter
-            onExitComplete={() => {
-              setTimeout(() => {
-                const elem = document.getElementById('content-animation-wrapper')
-                
-                // in case the animation failed
-                elem.style.opacity = '1'
-              }, 300)
-              
-            }}
-          > */}
-            {/* <motion.div
-              id='content-animation-wrapper'
-              key={router.route}
-              initial={{
-                opacity: 0
-              }}
-              exit={{
-                opacity: 0
-              }}
-              animate={{
-                opacity: 1
-              }}
-            > */}
-              <Component {...pageProps} />
-            {/* </motion.div> */}
-          {/* </AnimatePresence> */}
-        </Layout>
-      </AllContextProviders>
-    </V3ApolloWrapper>
+    <Layout
+      props={pageProps}
+    >
+      {/* <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => {
+          setTimeout(() => {
+            const elem = document.getElementById('content-animation-wrapper')
+            
+            // in case the animation failed
+            elem.style.opacity = '1'
+          }, 300)
+          
+        }}
+      > */}
+        {/* <motion.div
+          id='content-animation-wrapper'
+          key={router.route}
+          initial={{
+            opacity: 0
+          }}
+          exit={{
+            opacity: 0
+          }}
+          animate={{
+            opacity: 1
+          }}
+        > */}
+          <Component {...pageProps} />
+        {/* </motion.div> */}
+      {/* </AnimatePresence> */}
+    </Layout>
 
     <ToastContainer
       className='pool-toast'

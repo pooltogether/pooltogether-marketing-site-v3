@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ethers } from 'ethers'
 
-import { Trans, useTranslation } from 'lib/../i18n'
-import { PoolDataContext } from 'lib/components/contextProviders/PoolDataContextProvider'
+import { useTranslation } from 'lib/../i18n'
+import { useGraphPoolsQuery } from 'lib/hooks/useGraphPoolsQuery'
 import { ButtonLink } from 'lib/components/ButtonLink'
 import { WistiaPlayer } from 'lib/components/WistiaPlayer'
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther'
@@ -19,10 +19,13 @@ export const IndexHero = (
 ) => {
   const { t } = useTranslation()
 
-  const poolDataContext = useContext(PoolDataContext)
-  const {
-    pools,
-  } = poolDataContext
+  const { status, data, error, isFetching } = useGraphPoolsQuery()
+
+  if (error) {
+    console.warn(error)
+  }
+
+  const pools = data?.pools
 
   let totalPrizes = ethers.utils.bigNumberify(0)
   pools?.forEach(_pool => {
@@ -40,12 +43,6 @@ export const IndexHero = (
   })
 
   const [playVideo, setPlayVideo] = useState(false)
-  // const poolDataContext = useContext(PoolDataContext)
-  // const {
-  //   loading,
-  //   pools,
-  //   // pool,
-  // } = poolDataContext
 
   const startVideo = (e) => {
     e.preventDefault()
