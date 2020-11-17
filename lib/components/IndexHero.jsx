@@ -1,46 +1,16 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ethers } from 'ethers'
 
 import { useTranslation } from 'lib/../i18n'
-import { useGraphPoolsQuery } from 'lib/hooks/useGraphPoolsQuery'
 import { ButtonLink } from 'lib/components/ButtonLink'
+import { TotalPrizes } from 'lib/components/TotalPrizes'
 import { WistiaPlayer } from 'lib/components/WistiaPlayer'
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther'
-import { normalizeTo18Decimals } from 'lib/utils/normalizeTo18Decimals'
-
-// const PaperDynamic = dynamic(() =>
-//   import('lib/components/paper').then(mod => mod.Paper),
-//   { ssr: false }
-// )
 
 export const IndexHero = (
   props,
 ) => {
   const { t } = useTranslation()
-
-  const { status, data, error, isFetching } = useGraphPoolsQuery()
-
-  if (error) {
-    console.warn(error)
-  }
-
-  const pools = data?.pools
-
-  let totalPrizes = ethers.utils.bigNumberify(0)
-  pools?.forEach(_pool => {
-    const decimals = _pool?.underlyingCollateralDecimals
-    if (!decimals) { return }
-
-    const cumulativePrizeAmountsForPool = normalizeTo18Decimals(
-      _pool.prizeEstimate,
-      decimals
-    )
-
-    totalPrizes = totalPrizes.add(
-      cumulativePrizeAmountsForPool
-    )
-  })
 
   const [playVideo, setPlayVideo] = useState(false)
 
@@ -83,11 +53,15 @@ export const IndexHero = (
           <h1
             className='banner-text mx-auto font-bold text-center'
           >
-            <span className='text-flashy px-4 sm:leading-none'>Win ${displayAmountInEther(
-              '1395000000000000000000',
-              // totalPrizes,
-              { precision: 0 }
-            )} every week</span>
+            <span className='text-flashy px-4 sm:leading-none'>Win $<TotalPrizes>
+              {(totalPrizeAmountUSD => {
+                return displayAmountInEther(
+                  '2045000000000000000000',
+                  // totalPrizeAmountUSD,
+                  { precision: 0 }
+                )
+              })}
+            </TotalPrizes> every week</span>
             <div className='banner-text--small'>
               just by saving your money.
             </div>

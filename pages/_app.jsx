@@ -84,47 +84,11 @@ function MyApp({ Component, pageProps, router }) {
   //   initi18next()
   // }, [])
 
-  // if (!initialized) {
-  //   return <div
-  //     className='h-full w-full fixed t-0 r-0 l-0 b-0 text-white flex flex-col items-center justify-center'
-  //     style={{ backgroundColor: '#1E0B43', color: 'white' }}
-  //   >
-  //     <V3LoadingDots />
-  //   </div>
-  // }
-  
   return <>
     <Layout
       props={pageProps}
     >
-      {/* <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => {
-          setTimeout(() => {
-            const elem = document.getElementById('content-animation-wrapper')
-            
-            // in case the animation failed
-            elem.style.opacity = '1'
-          }, 300)
-          
-        }}
-      > */}
-        {/* <motion.div
-          id='content-animation-wrapper'
-          key={router.route}
-          initial={{
-            opacity: 0
-          }}
-          exit={{
-            opacity: 0
-          }}
-          animate={{
-            opacity: 1
-          }}
-        > */}
-          <Component {...pageProps} />
-        {/* </motion.div> */}
-      {/* </AnimatePresence> */}
+      <Component {...pageProps} />
     </Layout>
 
     <ToastContainer

@@ -710,3 +710,19 @@ li.nav-mobile-listitem {
 .community-button:hover path {
   stroke: var(--color-text-highlight-1);
 }
+
+.defi-pulse-image {
+  max-width: 280px;
+}
+
+@screen xs {
+  .defi-pulse-image {
+    max-width: 320px;
+  }
+}
+
+@screen sm {
+  .defi-pulse-image {
+    max-width: 400px;
+  }
+}

@@ -4,7 +4,6 @@ import { isEmpty } from 'lodash'
 import {
   MAINNET_POLLING_INTERVAL
 } from 'lib/constants'
-import { GeneralContext } from 'lib/components/contextProviders/GeneralContextProvider'
 import { useInterval } from 'lib/hooks/useInterval'
 import { fetchGenericChainData } from 'lib/utils/fetchGenericChainData'
 
@@ -17,8 +16,6 @@ export const FetchGenericChainData = (props) => {
     provider,
     poolData,
   } = props
-
-  const { paused } = useContext(GeneralContext)
 
   const [alreadyExecuted, setAlreadyExecuted] = useState(false)
   const [genericChainData, setGenericChainData] = useState({})
@@ -52,7 +49,7 @@ export const FetchGenericChainData = (props) => {
     }
 
     getChainDataAsync()
-  }, paused ? null : MAINNET_POLLING_INTERVAL)
+  }, MAINNET_POLLING_INTERVAL)
 
   // This only runs once when the component is mounted or when we reset the
   // `alreadyExecuted` state var if the user changes network, etc
