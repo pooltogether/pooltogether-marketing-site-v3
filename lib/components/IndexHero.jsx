@@ -36,11 +36,10 @@ export const IndexHero = (
       >
         <TotalPrizes>
           {(totalPrizeAmountUSD => {
-            console.log(totalPrizeAmountUSD.toString())
             return <>
               <motion.div
                 // animate={'enter'}
-                animate={totalPrizeAmountUSD.gt(0) ? 'enter' : 'exit'}
+                animate={totalPrizeAmountUSD.gt(0) ? 'enter' : null}
                 initial='initial'
                 transition={{ delay: 1 }}
                 variants={{
@@ -68,13 +67,13 @@ export const IndexHero = (
                     <PoolCountUp
                       fontSansRegular
                       decimals={0}
-                      duration={6}
-                    >
-                      {ethers.utils.formatUnits(
+                      duration={8}
+                      start={0}
+                      end={parseFloat(ethers.utils.formatUnits(
                         totalPrizeAmountUSD,
                         '18'
-                      )}
-                    </PoolCountUp> every week
+                      ))}
+                    /> every week
                   </span>
                   <div className='banner-text--small'>
                     just by saving your money.

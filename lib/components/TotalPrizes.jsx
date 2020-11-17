@@ -48,9 +48,6 @@ export const TotalPrizes = function(props) {
   }
 
 
-
-
-
   return <>
     <ChainQueries
       {...props}
@@ -61,8 +58,6 @@ export const TotalPrizes = function(props) {
       graphDataLoading={isFetching}
     >
       {({ genericChainData }) => {
-        const pools = compilePools(contractAddresses, cache, graphPoolsData, isFetching, genericChainData)
-
         const ethereumErc20Awards = cache.getQueryData([QUERY_KEYS.ethereumErc20sQuery, graphPoolsData?.daiPool?.poolAddress])
         const addresses = ethereumErc20Awards
           ?.filter(award => award.balance.gt(0))
@@ -73,6 +68,8 @@ export const TotalPrizes = function(props) {
           poolAddress={graphPoolsData?.daiPool?.poolAddress}
         >
           {() => {
+            const pools = compilePools(contractAddresses, cache, graphPoolsData, isFetching, genericChainData)
+            
             let totalPrizeAmountUSD = bn(0)
 
             pools?.forEach(_pool => {
@@ -91,10 +88,30 @@ export const TotalPrizes = function(props) {
               )
             })
 
-            return children(totalPrizeAmountUSD?.gt(0) ?
-              totalPrizeAmountUSD : 
-              bn('0')
-            )
+            let cachedTotalPrizeAmountUSD = cache.getQueryData('totalPrizeAmountUSDCached')
+
+            if (cachedTotalPrizeAmountUSD?.eq(totalPrizeAmountUSD)) {
+              return children(cachedTotalPrizeAmountUSD)
+            }
+
+
+            if (
+              !cachedTotalPrizeAmountUSD || totalPrizeAmountUSD.gt(cachedTotalPrizeAmountUSD)
+            ) {
+              cache.setQueryData('totalPrizeAmountUSDCached', totalPrizeAmountUSD)
+
+              if (!cachedTotalPrizeAmountUSD) {
+                return children(bn('0')  )
+              }
+
+              cachedTotalPrizeAmountUSD = totalPrizeAmountUSD
+            }
+
+            const amountBN = cachedTotalPrizeAmountUSD.gt(0) ?
+              cachedTotalPrizeAmountUSD :
+              bn('600000000000000000000')
+
+            return children(amountBN)
           }}
         </UniswapData>
       }}

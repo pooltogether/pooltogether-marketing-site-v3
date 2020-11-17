@@ -10,9 +10,7 @@ const debug = require('debug')('pool-app:FetchGenericChainData')
 
 export function ChainQueries(props) {
   const {
-    cache,
     children,
-    dynamicExternalAwardsData,
     provider,
     graphPoolsData,
   } = props
@@ -35,9 +33,7 @@ export function ChainQueries(props) {
 
 
 
-  // const graphExternalErc20Awards = dynamicExternalAwardsData?.daiPool?.externalErc20Awards
   const poolAddress = graphPoolsData?.daiPool?.poolAddress
-
   const graphExternalErc20Awards = graphPoolsData?.daiPool?.prizeStrategy?.externalErc20Awards
 
   const {
