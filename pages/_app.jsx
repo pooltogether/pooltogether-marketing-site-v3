@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react'
 import * as Fathom from 'fathom-client'
 import { ToastContainer } from 'react-toastify'
+import { ReactQueryDevtools } from 'react-query-devtools'
+import {
+  QueryCache,
+  ReactQueryCacheProvider
+} from 'react-query'
 
 import { Layout } from 'lib/components/Layout'
 
@@ -25,6 +30,8 @@ import 'assets/styles/pool-toast.css'
 
 import 'assets/styles/reach--custom.css'
 import 'assets/styles/vx--custom.css'
+
+const queryCache = new QueryCache()
 
 if (process.env.NEXT_JS_SENTRY_DSN) {
   Sentry.init({
@@ -85,11 +92,15 @@ function MyApp({ Component, pageProps, router }) {
   // }, [])
 
   return <>
-    <Layout
-      props={pageProps}
-    >
-      <Component {...pageProps} />
-    </Layout>
+    <ReactQueryCacheProvider queryCache={queryCache}>
+      <Layout
+        props={pageProps}
+      >
+        <Component {...pageProps} />
+      </Layout>
+      
+      <ReactQueryDevtools />
+    </ReactQueryCacheProvider>
 
     <ToastContainer
       className='pool-toast'

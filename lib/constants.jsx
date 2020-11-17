@@ -6,9 +6,8 @@ export const SECONDS_PER_BLOCK = 14
 
 export const DEFAULT_TOKEN_PRECISION = 18
 
-export const ERC_721_POLLING_INTERVAL = (600 * 1000)
-export const MAINNET_POLLING_INTERVAL = process.env.NEXT_JS_DOMAIN_NAME ? (60 * 1000) : (15 * 1000)
-export const UNISWAP_POLLING_INTERVAL = process.env.NEXT_JS_DOMAIN_NAME ? (60 * 1000) : (15 * 1000)
+export const MAINNET_POLLING_INTERVAL = process.env.NEXT_JS_DOMAIN_NAME ? (60 * 1000) : (5 * 1000)
+export const UNISWAP_POLLING_INTERVAL = process.env.NEXT_JS_DOMAIN_NAME ? (60 * 1000) : (5 * 1000)
 
 const domain = process.env.NEXT_JS_DOMAIN_NAME && `.${process.env.NEXT_JS_DOMAIN_NAME}`
 
@@ -44,7 +43,10 @@ export const CONTRACT_ADDRESSES = {
 }
 
 export const QUERY_KEYS = {
-  'poolsQuery': 'poolsQuery'
+  'ethereumErc20sQuery': 'ethereumErc20sQuery',
+  'ethereumGenericQuery': 'ethereumGenericQuery',
+  'poolsQuery': 'poolsQuery',
+  'uniswapTokensQuery': 'uniswapTokensQuery',
 }
 
 export const POOLTOGETHER_GRAPH_URIS = {

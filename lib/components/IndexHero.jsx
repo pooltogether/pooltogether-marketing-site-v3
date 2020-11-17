@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { ethers } from 'ethers'
 
 import { useTranslation } from 'lib/../i18n'
 import { ButtonLink } from 'lib/components/ButtonLink'
 import { TotalPrizes } from 'lib/components/TotalPrizes'
 import { WistiaPlayer } from 'lib/components/WistiaPlayer'
+import { PoolCountUp } from 'lib/components/PoolCountUp'
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther'
 
 export const IndexHero = (
@@ -32,52 +34,69 @@ export const IndexHero = (
           minHeight: 290
         }}
       >
-        <motion.div
-          animate={'enter'}
-          // animate={totalPrizes.gt(0) ? 'enter' : 'exit'}
-          initial='exit'
-          variants={{
-            enter: {
-              scale: 1,
-              height: 'auto',
-              transition: {
-                duration: 0.25
-              }
-            },
-            exit: {
-              scale: 0,
-              height: 0,
-            }
-          }}
-        >
-          <h1
-            className='banner-text mx-auto font-bold text-center'
-          >
-            <span className='text-flashy px-4 sm:leading-none'>Win $<TotalPrizes>
-              {(totalPrizeAmountUSD => {
-                return displayAmountInEther(
-                  '2045000000000000000000',
-                  // totalPrizeAmountUSD,
-                  { precision: 0 }
-                )
-              })}
-            </TotalPrizes> every week</span>
-            <div className='banner-text--small'>
-              just by saving your money.
-            </div>
-          </h1>
+        <TotalPrizes>
+          {(totalPrizeAmountUSD => {
+            console.log(totalPrizeAmountUSD.toString())
+            return <>
+              <motion.div
+                // animate={'enter'}
+                animate={totalPrizeAmountUSD.gt(0) ? 'enter' : 'exit'}
+                initial='initial'
+                transition={{ delay: 1 }}
+                variants={{
+                  enter: {
+                    scale: 1,
+                    height: 'auto',
+                    transition: {
+                      duration: 0.25
+                    }
+                  },
+                  initial: {
+                    scale: 0,
+                    height: 0,
+                  },
+                  exit: {
+                    scale: 1,
+                    height: 'auto',
+                  }
+                }}
+              >
+                <h1
+                  className='banner-text mx-auto font-bold text-center'
+                >
+                  <span className='text-flashy px-4 sm:leading-none'>Win $
+                    <PoolCountUp
+                      fontSansRegular
+                      decimals={0}
+                      duration={6}
+                    >
+                      {ethers.utils.formatUnits(
+                        totalPrizeAmountUSD,
+                        '18'
+                      )}
+                    </PoolCountUp> every week
+                  </span>
+                  <div className='banner-text--small'>
+                    just by saving your money.
+                  </div>
+                </h1>
 
-          <div
-            className='text-center'
-          >
-            <ButtonLink
-              href='https://app.pooltogether.com'
-              as='https://app.pooltogether.com'
-            >
-              Get tickets!
-            </ButtonLink>
-          </div>
-        </motion.div>
+                <div
+                  className='text-center'
+                >
+                  <ButtonLink
+                    href='https://app.pooltogether.com'
+                    as='https://app.pooltogether.com'
+                  >
+                    Get tickets!
+                  </ButtonLink>
+                </div>
+              </motion.div>
+            </>
+          })}
+        </TotalPrizes>
+
+        
       </div>
 
       
