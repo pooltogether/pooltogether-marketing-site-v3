@@ -25,6 +25,11 @@ export const POOLS = [
   }
 ]
 
+export const PRIZE_STRATEGY_TYPES = {
+  'singleRandomWinner': 'singleRandomWinner',
+  'multipleWinners': 'multipleWinners'
+}
+
 export const CONTRACT_ADDRESSES = {
   1: {
     Usdt: '0xdac17f958d2ee523a2206206994597c13d831ec7',
@@ -49,14 +54,20 @@ export const QUERY_KEYS = {
   'uniswapTokensQuery': 'uniswapTokensQuery',
 }
 
-export const POOLTOGETHER_GRAPH_URIS = {
+export const POOLTOGETHER_CURRENT_GRAPH_URIS = {
   1: process.env.NEXT_JS_SUBGRAPH_URI_MAINNET,
   3: process.env.NEXT_JS_SUBGRAPH_URI_ROPSTEN,
-  4: process.env.NEXT_JS_SUBGRAPH_URI_RINKEBY,
+  4: process.env.NEXT_JS_SUBGRAPH_URI_RINKEBY
 }
 
 export const UNISWAP_GRAPH_URIS = {
   1: process.env.NEXT_JS_UNISWAP_SUBGRAPH_URI_MAINNET, // https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
   3: process.env.NEXT_JS_UNISWAP_SUBGRAPH_URI_ROPSTEN,
   4: process.env.NEXT_JS_UNISWAP_SUBGRAPH_URI_RINKEBY, // https://api.thegraph.com/subgraphs/name/blockrockettech/uniswap-v2-subgraph-rinkeby
+}
+
+export const LOOTBOX_GRAPH_URIS = {
+  1: process.env.NEXT_JS_SUBGRAPH_LOOTBOX_URI_MAINNET,
+  3: process.env.NEXT_JS_SUBGRAPH_LOOTBOX_URI_ROPSTEN,
+  4: process.env.NEXT_JS_SUBGRAPH_LOOTBOX_URI_RINKEBY,
 }

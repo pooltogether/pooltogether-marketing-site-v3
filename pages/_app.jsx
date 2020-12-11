@@ -7,6 +7,7 @@ import {
   ReactQueryCacheProvider
 } from 'react-query'
 
+import { AllContextProviders } from 'lib/components/AllContextProviders'
 import { Layout } from 'lib/components/Layout'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -93,12 +94,14 @@ function MyApp({ Component, pageProps, router }) {
 
   return <>
     <ReactQueryCacheProvider queryCache={queryCache}>
-      <Layout
-        props={pageProps}
-      >
-        <Component {...pageProps} />
-      </Layout>
-      
+      <AllContextProviders>
+        <Layout
+          props={pageProps}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </AllContextProviders>
+        
       <ReactQueryDevtools />
     </ReactQueryCacheProvider>
 

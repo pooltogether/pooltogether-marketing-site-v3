@@ -1,20 +1,19 @@
 import gql from 'graphql-tag'
 
-import { externalErc20AwardFragment } from 'lib/fragments/externalErc20AwardFragment'
+import { multipleWinnersFragment } from 'lib/fragments/multipleWinnersFragment'
 import { singleRandomWinnerFragment } from 'lib/fragments/singleRandomWinnerFragment'
 
 export const prizeStrategyFragment = gql`
   fragment prizeStrategyFragment on PrizeStrategy {
     id
 
-    externalErc20Awards {
-      ...externalErc20AwardFragment
-    }
-    
     singleRandomWinner {
       ...singleRandomWinnerFragment
     }
+    multipleWinners {
+      ...multipleWinnersFragment
+    }
   }
-  ${externalErc20AwardFragment}
   ${singleRandomWinnerFragment}
+  ${multipleWinnersFragment}
 `
