@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useTranslation } from 'lib/../i18n'
-import { IndexFeaturedIn } from 'lib/components/IndexFeaturedIn'
+// import { IndexFeaturedIn } from 'lib/components/IndexFeaturedIn'
 import { IndexGetInvolved } from 'lib/components/IndexGetInvolved'
 import { IndexHero } from 'lib/components/IndexHero'
 import { IndexHowItWorks } from 'lib/components/IndexHowItWorks'
@@ -21,6 +21,6 @@ export const IndexUI = (
     <IndexSecurity />
     <IndexBackedBy />
     <IndexGetInvolved />
-    <IndexFeaturedIn />
+    {/* <IndexFeaturedIn /> */}
   </>
 }
