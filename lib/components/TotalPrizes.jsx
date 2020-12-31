@@ -16,7 +16,7 @@ const bn = ethers.utils.bigNumberify
 
 export const TotalPrizes = function(props) {
   const { children } = props
-  return children(ethers.utils.bigNumberify('2342000000000000000000'))
+  return children(ethers.utils.bigNumberify('4047000000000000000000'))
 
 
   const chainId = 1
