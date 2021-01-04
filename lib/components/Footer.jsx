@@ -94,11 +94,6 @@ export const Footer = () => {
                       >
                         Developers
                       </FooterLink>
-                      {/* <FooterLink
-                        href='/how-it-works'
-                      >
-                        How it works
-                      </FooterLink> */}
                       <FooterLink
                         href='/audits'
                       >
@@ -113,6 +108,11 @@ export const Footer = () => {
                         href='/brand-assets'
                       >
                         Brand assets
+                      </FooterLink>
+                      <FooterLink
+                        href='https://gov.pooltogether.com/'
+                      >
+                        Governance
                       </FooterLink>
                     </ul>
                   </div>
