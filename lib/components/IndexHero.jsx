@@ -87,7 +87,7 @@ export const IndexHero = (
                     href='https://app.pooltogether.com'
                     as='https://app.pooltogether.com'
                   >
-                    Get tickets!
+                    Deposit now
                   </ButtonLink>
                 </div>
               </motion.div>
